@@ -47,3 +47,8 @@ exports.viewData = (req, res) => {
 exports.admin = (req, res) => {
   res.render("admin");
 };
+
+
+exports.addClass = (req, res) => {
+  res.render("add-class");
+};

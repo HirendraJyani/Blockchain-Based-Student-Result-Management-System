@@ -7,16 +7,16 @@ const path = require('path');
 // require('dotenv').config();
 
 const app = express();
-const port = 5000;
+const port = 5080;
 
 app.use(bodyParser.urlencoded({extended:false}));
 
 app.use(express.json());
 
-app.use(express.static('public'));
-
 app.set("views",path.join(__dirname,"views"));
 app.set("view engine","ejs");
+
+app.use(express.static(__dirname + '/public'));
 
 var provider = "http://127.0.0.1:7545";
 var web3Provider = new Web3.providers.HttpProvider(provider);
