@@ -10,6 +10,9 @@ router.get('/',contractController.viewData);
 router.get('/admin',contractController.admin);
 
 
-router.get('/admin/add-class',contractController.addClass);
+router.get('/admin/class-data',contractController.classData);
+
+
+router.post('/addClass',contractController.addClass);
 
 module.exports = router;
