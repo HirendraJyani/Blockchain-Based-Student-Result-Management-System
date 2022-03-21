@@ -23,8 +23,8 @@
       </div>
       <hr />
       <div class="admin-body">
-        <form class="add-class-body mt-3 " method="POST" action="/addClass">
-          <input type="text" placeholder="CLASS NAME" name="className">
+        <form class="add-class-body mt-3 " method="POST" action="admin">
+          <input id='classNameId' type="text" placeholder="CLASS NAME" name="className" value="">
           <button type="submit" class="btn btn-primary">
             ADD CLASS
           </button>
@@ -33,14 +33,11 @@
           <h5 class="mt-5">Classes List</h5>
           <div class="classes-container">
             <div class="row">
-              <div class="col-3"><p><a href="admin/class-data">CLASS-1</a></p></div>
-              <div class="col-3"><p><a href="">CLASS-1</a></p></div>
-              <div class="col-3"><p><a href="">CLASS-1</a></p></div>
-              <div class="col-3"><p><a href="">CLASS-1</a></p></div>
-              <div class="col-3"><p><a href="">CLASS-1</a></p></div>
-              <div class="col-3"><p><a href="">CLASS-1</a></p></div>
-              <div class="col-3"><p><a href="">CLASS-1</a></p></div>
-              <div class="col-3"><p><a href="">CLASS-1</a></p></div>
+              <div class="col-3"><p><a href="admin/class-data/1">CLASS-1</a></p></div>
+              <% for(var i=0; i < classNameArray.length; i++) { %>
+               
+                <div class="col-3"><p><a href='admin/class-data/<%= classNameArray[i].classId %>' ><%= classNameArray[i].className %></a></p></div>
+           <% } %>
             </div>
           </div>
         </div>

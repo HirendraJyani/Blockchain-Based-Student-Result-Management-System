@@ -7,7 +7,7 @@ const path = require('path');
 // require('dotenv').config();
 
 const app = express();
-const port = 5080;
+const port = 5000;
 
 app.use(bodyParser.urlencoded({extended:false}));
 
@@ -258,7 +258,7 @@ const abi = [
 //   },
 // ];
 
-const address = "0xe7e36E1ed4c77d1Ad5e14ef90a3AE46cCbA3964e";
+const address = "0x2f6df93E6Bc4f040d2509a6D58354F1DBd490E04";
 // console,log(web3.eth.)
 
 const initContract = () => {
