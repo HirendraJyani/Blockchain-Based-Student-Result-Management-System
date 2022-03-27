@@ -1,5 +1,6 @@
 body {
-  background-color: #0d5bb8;
+  /* background-color: #4295AF; */
+  background-color: #05595B;
 }
 
 .admin-container {
@@ -8,7 +9,7 @@ body {
   min-height: 85vh;
   border-radius: 25px;
   /* box-shadow: 10px 10px 5px #213974; */
-  box-shadow: 5px 10px 8px 10px #0e4c98;
+  /* box-shadow: 5px 10px 8px 10px #515d6b; */
   padding: 2rem 4rem;
 }
 
@@ -17,12 +18,17 @@ body {
 }
 
 .admin-nav .row .col-4 h4 {
-  color: #4785e4;
+  color: #05595B;
+}
+
+.admin-classes h5{
+  color: #05595B;
 }
 
 .admin-nav .row .col-8 a {
   float: right !important;
   text-decoration: none;
+  color: #05595B !important;
 }
 
 .admin-body button a{
@@ -36,7 +42,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #FE7E6D;
+    /* background-color: #3E849D; */
+    background-color: #05595B;
     border-radius: 10px;
     margin: 1rem .6rem;
 }
@@ -49,4 +56,8 @@ body {
 .classes-container a{
   color: white;
   text-decoration: none;
+}
+
+.add-class-btn {
+  background-color: #05595B;
 }

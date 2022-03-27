@@ -1,59 +1,84 @@
 body {
-    background-color: #0d5bb8;
-  }
-  
-  .admin-container {
-    background-color: white;
-    margin: 3rem;
-    min-height: 85vh;
-    border-radius: 25px;
-    /* box-shadow: 10px 10px 5px #213974; */
-    box-shadow: 5px 10px 8px 10px #0e4c98;
-    padding: 2rem 4rem;
-  }
-  
-  .admin-nav {
-      margin-bottom: 1.5rem;
-  }
-  
-  .admin-nav .row .col-4 h4 {
-    color: #4785e4;
-  }
-  
-  .admin-nav .row .col-8 a {
-    float: right !important;
-    text-decoration: none;
-  }
-  
-  .admin-body button a{
-      color: white;
-      text-decoration: none;
-  }
-  
-  .classes-container .row .col-3{
-      max-width: 10rem;
-      min-height: 8rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: #FE7E6D;
-      border-radius: 10px;
-      margin: 1rem .6rem;
-  }
-  
-  
-  .classes-container .row .col p{
-      color: white;
-  }
-  
-  .classes-container a{
-    color: white;
-    text-decoration: none;
-  }
+  background-color: #05595b;
+}
 
-  .form-body {
-      margin-top: 3rem;
-      border-radius: 10px;
-      box-shadow: 1px 2px 10px 2px #585b5e;
-      padding: 1rem;
-  }
+.admin-container {
+  background-color: white;
+  margin: 3rem;
+  min-height: 85vh;
+  border-radius: 25px;
+  /* box-shadow: 10px 10px 5px #213974; */
+  padding: 2rem 4rem;
+}
+
+.admin-nav {
+  margin-bottom: 1.5rem;
+}
+
+.admin-nav .row .col-4 h4 {
+  color: #05595b;
+}
+
+.admin-nav .row .col-8 a {
+  float: right !important;
+  text-decoration: none;
+  color: #05595b !important;
+}
+
+.admin-body button a {
+  color: white;
+  text-decoration: none;
+}
+
+.classes-container .row .col-3 {
+  max-width: 10rem;
+  min-height: 8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #05595b;
+  border-radius: 10px;
+  margin: 1rem 0.6rem;
+}
+
+.classes-container .row .col p {
+  color: white;
+}
+
+.classes-container a {
+  color: white;
+  text-decoration: none;
+}
+
+.form-body {
+  margin-top: 3rem;
+  border-radius: 10px;
+  /* box-shadow: 1px 1px 6px 0px #252526; */
+  border: 1px solid #055a5b62;
+  padding: 1rem;
+}
+
+.form-body input {
+  border: 1px solid #055a5b62;
+}
+
+.admin-classes h5 {
+  color: #05595b;
+}
+
+.add-class-btn {
+  background-color: #05595b;
+}
+
+hr {
+  background-color: #05595b;
+}
+
+label{
+  color: #0a393a;
+}
+
+.students-data{
+  border: 1px solid #055a5b62;
+  margin: 2rem 1rem;
+}

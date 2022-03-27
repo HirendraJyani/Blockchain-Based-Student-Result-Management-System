@@ -24,41 +24,107 @@
       <hr />
       <div class="admin-body">
         <div class="form-body">
-          <form class="row g-3" method="POST", action="/admin/class-data/<%= queryClassID %>">
+          <form
+            class="row g-3"
+            method="POST"
+            ,
+            action="/admin/class-data/<%= queryClassID %>"
+          >
             <div class="col-md-6">
               <label for="inputEmail4" class="form-label">Student Name</label>
-              <input type="text" class="form-control" id="inputEmail4" name="name" />
+              <input
+                type="text"
+                class="form-control"
+                id="inputEmail4"
+                name="name"
+              />
             </div>
             <div class="col-md-6">
               <label for="inputPassword4" class="form-label">Roll No.</label>
-              <input type="text" class="form-control" id="inputPassword4" name="rollno" />
+              <input
+                type="text"
+                class="form-control"
+                id="inputPassword4"
+                name="rollno"
+              />
             </div>
             <div class="col-md-6">
               <label for="inputEmail4" class="form-label">Branch</label>
-              <input type="text" class="form-control" id="inputEmail4" name="batch" />
+              <input
+                type="text"
+                class="form-control"
+                id="inputEmail4"
+                name="batch"
+              />
             </div>
             <div class="col-md-6">
               <label for="inputPassword4" class="form-label">Semester</label>
-              <input type="text" class="form-control" id="inputPassword4" name="semester" />
+              <input
+                type="text"
+                class="form-control"
+                id="inputPassword4"
+                name="semester"
+              />
             </div>
             <div class="col-md-6">
               <label for="inputEmail4" class="form-label">Subject 1</label>
-              <input type="text" class="form-control" id="inputEmail4" placeholder="Big Data" name="bigData" />
+              <input
+                type="text"
+                class="form-control"
+                id="inputEmail4"
+                placeholder="Big Data"
+                name="bigData"
+              />
             </div>
             <div class="col-md-6">
               <label for="inputPassword4" class="form-label">Subject 2</label>
-              <input type="text" class="form-control" id="inputPassword4" placeholder="Disaster Management" name="disasterManagement" />
+              <input
+                type="text"
+                class="form-control"
+                id="inputPassword4"
+                placeholder="Disaster Management"
+                name="disasterManagement"
+              />
             </div>
 
             <div class="col-12">
-              <button type="submit" class="btn btn-primary">ADD Student</button>
+              <button type="submit" class="btn btn-primary add-class-btn">
+                ADD Student
+              </button>
             </div>
           </form>
         </div>
         <div class="admin-classes">
           <h5 class="mt-5">Students List</h5>
-          <div class="classes-container">
-            <div class="row"></div>
+          <div class="student-container">
+            <% for(var i=0; i < studentArray.length; i++) { %>
+            <div class="row students-data">
+              <div class="col-md-6">
+                <label for="">Student Name</label>
+                <p><%= studentArray[i].name %></p>
+              </div>
+              <div class="col-md-6">
+                <label for="">Roll No.</label>
+                <p><%= studentArray[i].rollno %></p>
+              </div>
+              <div class="col-md-6">
+                <label for="">Branch</label>
+                <p><%= studentArray[i].batch %></p>
+              </div>
+              <div class="col-md-6">
+                <label for="">Semester</label>
+                <p><%= studentArray[i].semester %></p>
+              </div>
+              <div class="col-md-6">
+                <label for="">Subject 1</label>
+                <p><%= studentArray[i].bigData %></p>
+              </div>
+              <div class="col-md-6">
+                <label for="">Subject 2</label>
+                <p><%= studentArray[i].disasterManagement %></p>
+              </div>
+            </div>
+            <% } %>
           </div>
         </div>
       </div>
