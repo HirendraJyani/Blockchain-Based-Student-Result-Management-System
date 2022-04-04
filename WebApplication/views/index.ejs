@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="/index.css" />
   </head>
   <body>
-    <%= console.log('insdex data = ',data) %>
 
     <div class="home-container">
       <div class="home-nav">
@@ -28,15 +27,30 @@
         <div class="home-classes">
           <h5 class="mt-5">Classes List</h5>
           <div class="classes-container">
+            <!-- <div class="row">
+              <div class="col-3"><p>CLASS-1</p></div>
+              <div class="col-3"><p>CLASS-1</p></div>
+              <div class="col-3"><p>CLASS-1</p></div>
+              <div class="col-3"><p>CLASS-1</p></div>
+              <div class="col-3"><p>CLASS-1</p></div>
+              <div class="col-3"><p>CLASS-1</p></div>
+              <div class="col-3"><p>CLASS-1</p></div>
+              <div class="col-3"><p>CLASS-1</p></div>
+            </div> -->
             <div class="row">
-              <div class="col-3"><p>CLASS-1</p></div>
-              <div class="col-3"><p>CLASS-1</p></div>
-              <div class="col-3"><p>CLASS-1</p></div>
-              <div class="col-3"><p>CLASS-1</p></div>
-              <div class="col-3"><p>CLASS-1</p></div>
-              <div class="col-3"><p>CLASS-1</p></div>
-              <div class="col-3"><p>CLASS-1</p></div>
-              <div class="col-3"><p>CLASS-1</p></div>
+              <div class="col-3">
+                <p><a href="/result/1">CLASS-1</a></p>
+              </div>
+              <% for(var i=0; i < classNameArray.length; i++) { %>
+
+              <div class="col-3">
+                <p>
+                  <a href="/result/<%= classNameArray[i].classId %>"
+                    ><%= classNameArray[i].className %></a
+                  >
+                </p>
+              </div>
+              <% } %>
             </div>
           </div>
         </div>

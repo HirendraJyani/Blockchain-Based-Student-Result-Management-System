@@ -99,28 +99,32 @@
           <div class="student-container">
             <% for(var i=0; i < studentArray.length; i++) { %>
             <div class="row students-data">
+              <div class="col-12 student-report-header">
+                <h2>Bikaner Technical University, Bikaner</h2>
+                <h3>B.Tech Examination on June-2022</h3>
+              </div>
               <div class="col-md-6">
-                <label for="">Student Name</label>
+                <label for="">Student Name :</label>
                 <p><%= studentArray[i].name %></p>
               </div>
               <div class="col-md-6">
-                <label for="">Roll No.</label>
+                <label for="">Roll No. :</label>
                 <p><%= studentArray[i].rollno %></p>
               </div>
               <div class="col-md-6">
-                <label for="">Branch</label>
+                <label for="">Branch :</label>
                 <p><%= studentArray[i].batch %></p>
               </div>
               <div class="col-md-6">
-                <label for="">Semester</label>
+                <label for="">Semester :</label>
                 <p><%= studentArray[i].semester %></p>
               </div>
               <div class="col-md-6">
-                <label for="">Subject 1</label>
+                <label for="">Subject 1 :</label>
                 <p><%= studentArray[i].bigData %></p>
               </div>
               <div class="col-md-6">
-                <label for="">Subject 2</label>
+                <label for="">Subject 2 :</label>
                 <p><%= studentArray[i].disasterManagement %></p>
               </div>
             </div>

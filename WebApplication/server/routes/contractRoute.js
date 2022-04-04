@@ -9,6 +9,8 @@ router.get('/',contractController.viewData);
 
 router.get('/admin',contractController.admin);
 
+router.get('/result/:classID',contractController.studentResult);
+
 
 router.get('/admin/class-data/:classID',contractController.classData);
 

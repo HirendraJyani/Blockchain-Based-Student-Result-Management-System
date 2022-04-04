@@ -229,7 +229,7 @@ const abi = [
 //   },
 // ];
 
-const address = "0x13DD4D9F914499E629132e59a0F2d03531394F34";
+const address = "0x894d4C4c9D9ce5d0b227AC2Eae36FA9D6dF38a31";
 
 let classId = 1;
 
@@ -246,48 +246,55 @@ const initContract = () => {
 };
 
 exports.viewData = (req, res) => {
-  let crud = initContract();
+  getAllAddedClasses().then(() => res.render("index", { classNameArray }));
+};
 
-  let finalResult;
-
-  crud.methods
-    .hello()
-    .call()
-    .then((result) => {
-      console.log("HELLO 2 = ", result);
-      finalResult = result;
-      res.render("index", { data: finalResult });
-    });
+exports.studentResult = (req, res) => {
+  queryClassID = parseInt(req.params.classID);
+  console.log("pARma = ", req.params.classID);
+  refreshStudentData().then(() =>
+    res.render("show-result", { studentArray, queryClassID })
+  );
 };
 
 exports.admin = (req, res) => {
   classNameArray = [];
-  getAllAddedClasses(req, res);
+  getAllAddedClasses().then(() => res.render("admin", { classNameArray }));
   // res.render("admin", { classNameArray });
 };
 
 exports.classData = (req, res) => {
-  queryClassID = req.params.classID;
+  queryClassID = parseInt(req.params.classID);
   console.log("pARma = ", req.params.classID);
-  res.render("class-data", { studentArray, queryClassID });
+  // res.render("class-data", { studentArray, queryClassID });
+
+  refreshStudentData().then(() =>
+    res.render("class-data", { studentArray, queryClassID })
+  );
 };
 
 exports.addStudentData = (req, res) => {
+  queryClassID = parseInt(req.params.classID);
+  console.log("pARma = ", req.params.classID);
   console.log("length = ", req.body.name.trim().length);
   console.log("length2 = ", req.body);
   if (req.body.name.trim().length > 0) {
     getStudentData(req, res);
-    res.render("class-data", { studentArray, queryClassID });
+    // res.render("class-data", { studentArray, queryClassID });
   }
 };
 
 async function getStudentData(req, res) {
-  const uniqueName = studentArray.findIndex((e) => e.studentId === studentId);
+  studentId = new Date().getTime();
+  const uniqueName = studentArray.findIndex(
+    (e) => e.rollno === req.body.rollno
+  );
 
   console.log("uniqueName = ", uniqueName);
+  console.log("params classID = ", queryClassID);
 
   if (uniqueName === -1) {
-    res.render("class-data", { studentArray, queryClassID });
+    // res.render("class-data", { studentArray, queryClassID });
     const classData = [];
     let crud = initContract();
     const otherAccounts = await web3.eth.getAccounts();
@@ -306,27 +313,15 @@ async function getStudentData(req, res) {
       .send({ from: otherAccounts[1], gas: 3000000 })
       .then(
         () => {
-          crud.methods
-            .getAllStudent()
-            .call()
-            .then(
-              (result) => {
-                console.log("studentArray= ", result);
-                studentArray = result;
-              },
-              (err) => {
-                console.log("ERROR1 = ", err);
-                res.render("class-data", { studentArray, queryClassID });
-              }
-            );
-          console.log("SUCCESS ");
-          res.render("class-data", { studentArray, queryClassID });
+          refreshStudentData().then(() =>
+            res.render("class-data", { studentArray, queryClassID })
+          );
         },
         (err) => {
           console.log("ERROR2 = ", err);
         }
       );
-    classId++;
+    // studentId++;
   }
 }
 
@@ -335,11 +330,12 @@ exports.addClass = (req, res) => {
   console.log("length2 = ", req.body);
   if (req.body.className.trim().length > 0) {
     getAddClass(req, res);
-    res.render("admin", { classNameArray });
+    // res.render("admin", { classNameArray });
   }
 };
 
 async function getAddClass(req, res) {
+  classId = new Date().getTime();
   const uniqueName = classNameArray.findIndex(
     (e) => e.className === req.body.className
   );
@@ -348,7 +344,7 @@ async function getAddClass(req, res) {
 
   if (uniqueName === -1) {
     console.log("classData = ", req.body.className);
-    res.render("admin", { classNameArray });
+    // res.render("admin", { classNameArray });
     const classData = [];
     let crud = initContract();
     const otherAccounts = await web3.eth.getAccounts();
@@ -359,31 +355,62 @@ async function getAddClass(req, res) {
       .then(
         () => {
           classNameArray = [];
-          getAllAddedClasses(req, res);
+          getAllAddedClasses().then(() =>
+            res.render("admin", { classNameArray })
+          );
         },
         (err) => {
           console.log("ERROR2 = ", err);
         }
       );
-    classId++;
+    // classId++;
   }
 }
 
-function getAllAddedClasses(req, res) {
+function getAllAddedClasses() {
   let crud = initContract();
-  crud.methods
-    .getAllClasses()
-    .call()
-    .then(
-      (result) => {
-        console.log("ClassID= ", result);
-        classNameArray = result;
-        res.render("admin", { classNameArray });
-      },
-      (err) => {
-        console.log("ERROR1 = ", err);
-        res.render("admin", { classNameArray });
-      }
-    );
-  console.log("SUCCESS ");
+
+  return new Promise((resolve, reject) => {
+    crud.methods
+      .getAllClasses()
+      .call()
+      .then(
+        (result) => {
+          console.log("ClassID= ", result);
+          classNameArray = result;
+          resolve();
+        },
+        (err) => {
+          console.log("ERROR1 = ", err);
+          reject();
+        }
+      );
+    console.log("SUCCESS ");
+  });
 }
+
+const refreshStudentData = () => {
+  let crud = initContract();
+  return new Promise((resolve) => {
+    crud.methods
+      .getAllStudent()
+      .call()
+      .then(
+        (result) => {
+          studentArray = [];
+          console.log("studentArray= ", result);
+          studentArray = result.filter((e) => {
+            console.log("studentArray 2 = ");
+            return e.classId == queryClassID;
+          });
+          console.log("filter studentArray = ", studentArray);
+          resolve();
+        },
+        (err) => {
+          console.log("ERROR1 = ", err);
+          res.render("class-data", { studentArray, queryClassID });
+        }
+      );
+    console.log("SUCCESS ");
+  });
+};

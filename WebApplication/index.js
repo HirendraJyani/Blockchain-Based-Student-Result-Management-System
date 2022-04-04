@@ -258,7 +258,7 @@ const abi = [
 //   },
 // ];
 
-const address = "0x13DD4D9F914499E629132e59a0F2d03531394F34";
+const address = "0x894d4C4c9D9ce5d0b227AC2Eae36FA9D6dF38a31";
 // console,log(web3.eth.)
 
 const initContract = () => {

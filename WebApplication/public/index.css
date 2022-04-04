@@ -48,6 +48,11 @@ body{
 
 
 .classes-container .row .col p{
-    color: white;
+  color: white;
+}
+
+.classes-container a{
+color: white;
+text-decoration: none;
 }
   
