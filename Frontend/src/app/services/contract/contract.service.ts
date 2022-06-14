@@ -6,6 +6,22 @@ import { Observable, Subject } from "rxjs";
 import {
   contract_address,
   contract_abi,
+  first_sem_contract_address,
+  second_sem_contract_address,
+  third_sem_contract_address,
+  fourth_sem_contract_address,
+  fifth_sem_contract_address,
+  sixth_sem_contract_address,
+  seventh_sem_contract_address,
+  eigth_sem_contract_address,
+  first_sem_abi,
+  second_sem_abi,
+  third_sem_abi,
+  fourth_sem_abi,
+  fifth_sem_abi,
+  sixth_sem_abi,
+  sevent_sem_abi,
+  eigth_sem_abi
 } from "../../../assets/connectContract.js";
 
 import Web3 from "web3";
@@ -151,10 +167,20 @@ export class ContractService {
     );
 
     return await connectContract.methods
-      .addStudent(name, batch, rollno, email, father, mother, admission, college, classId, studentId)
+      .addStudent(
+        name,
+        batch,
+        rollno,
+        email,
+        father,
+        mother,
+        admission,
+        college,
+        studentId,
+        classId
+      )
       .send({ from: this.accounts[0] });
   }
-
 
   async getStudentInfo(): Promise<any> {
     const connectContract = new this.web3js.eth.Contract(
@@ -166,6 +192,375 @@ export class ContractService {
       .call({ from: this.accounts[0] });
     console.log("getStudentInfo = ", studentInfo);
     return studentInfo;
+  }
+
+
+  async postFirstSemesterInfo(
+    mathemetics: string,
+    chemistry: string,
+    humanValues: string,
+    programming: string,
+    civil: string,
+    chemistryLab: string,
+    humanValueActivities: string,
+    cpLab: string,
+    civilLab: string,
+    camd: string,
+    sodeca: string,
+    studentId: any
+  ): Promise<any> {
+    const connectContract = new this.web3js.eth.Contract(
+      first_sem_abi,
+      first_sem_contract_address
+    );
+
+    return await connectContract.methods
+      .addFirstSemesterInfo(
+        mathemetics,
+        chemistry,
+        humanValues,
+        programming,
+        civil,
+        chemistryLab,
+        humanValueActivities,
+        cpLab,
+        civilLab,
+        camd,
+        sodeca,
+        studentId
+      )
+      .send({ from: this.accounts[0] });
+  }
+
+  async postSecondSemesterInfo(
+    mathemetics: string,
+    physics: string,
+    communication: string,
+    mechanical: string,
+    electrical: string,
+    physicsLab: string,
+    languageLab: string,
+    manufacturing: string,
+    electricalLab: string,
+    caeg: string,
+    sodeca: string,
+    studentId: any
+  ): Promise<any> {
+    const connectContract = new this.web3js.eth.Contract(
+      second_sem_abi,
+      second_sem_contract_address
+    );
+
+    return await connectContract.methods
+      .addSecondSemesterInfo(
+        mathemetics,
+        physics,
+        communication,
+        mechanical,
+        electrical,
+        physicsLab,
+        languageLab,
+        manufacturing,
+        electricalLab,
+        caeg,
+        sodeca,
+        studentId
+      )
+      .send({ from: this.accounts[0] });
+  }
+
+  async postThirdSemesterInfo(
+    mathemetics: string,
+    economics: string,
+    electronics: string,
+    dsa: string,
+    oop: string,
+    software: string,
+    dsaLab: string,
+    oopLab: string,
+    softwareLab: string,
+    electronicsLab: string,
+    training: string,
+    studentId: any
+  ): Promise<any> {
+    const connectContract = new this.web3js.eth.Contract(
+      third_sem_abi,
+      third_sem_contract_address
+    );
+
+    return await connectContract.methods
+      .addThirdSemesterInfo(
+        mathemetics,
+        economics,
+        electronics,
+        dsa,
+        oop,
+        software,
+        dsaLab,
+        oopLab,
+        softwareLab,
+        electronicsLab,
+        training,
+        studentId
+      )
+      .send({ from: this.accounts[0] });
+  }
+
+  async postFourthSemesterInfo(
+    mathemetics: string,
+    communication: string,
+    microprocessor: string,
+    dbms: string,
+    toc: string,
+    networks: string,
+    mpLab: string,
+    dbmsLab: string,
+    npLab: string,
+    linux: string,
+    javaLab: string,
+    studentId: any
+  ): Promise<any> {
+    const connectContract = new this.web3js.eth.Contract(
+      fourth_sem_abi,
+      fourth_sem_contract_address
+    );
+
+    return await connectContract.methods
+      .addFourthSemesterInfo(
+        mathemetics,
+        communication,
+        microprocessor,
+        dbms,
+        toc,
+        networks,
+        mpLab,
+        dbmsLab,
+        npLab,
+        linux,
+        javaLab,
+        studentId
+      )
+      .send({ from: this.accounts[0] });
+  }
+
+  async postFiveSemesterInfo(
+    itc: string,
+    compiler: string,
+    operating: string,
+    graphics: string,
+    algo: string,
+    hci: string,
+    graphicsLab: string,
+    compilerLab: string,
+    algoLab: string,
+    javaLab: string,
+    training: string,
+    studentId: any
+  ): Promise<any> {
+    const connectContract = new this.web3js.eth.Contract(
+      fifth_sem_abi,
+      fifth_sem_contract_address
+    );
+
+    return await connectContract.methods
+      .addFiveSemesterInfo(
+        itc,
+        compiler,
+        operating,
+        graphics,
+        algo,
+        hci,
+        graphicsLab,
+        compilerLab,
+        algoLab,
+        javaLab,
+        training,
+        studentId
+      )
+      .send({ from: this.accounts[0] });
+  }
+
+  async postSixSemesterInfo(
+    image: string,
+    machine: string,
+    security: string,
+    cao: string,
+    ai: string,
+    cloud: string,
+    distributed: string,
+    imageLab: string,
+    machineLab: string,
+    pythonLab: string,
+    aapLab: string,
+    studentId: any
+  ): Promise<any> {
+    const connectContract = new this.web3js.eth.Contract(
+      sixth_sem_abi,
+      sixth_sem_contract_address
+    );
+
+    return await connectContract.methods
+      .addSixSemesterInfo(
+        image,
+        machine,
+        security,
+        cao,
+        ai,
+        cloud,
+        distributed,
+        imageLab,
+        machineLab,
+        pythonLab,
+        aapLab,
+        studentId
+      )
+      .send({ from: this.accounts[0] });
+  }
+
+  async postSevenSemesterInfo(
+    iot: string,
+    eedm: string,
+    iotLab: string,
+    aLab: string,
+    sodeca: string,
+    studentId: any
+  ): Promise<any> {
+    const connectContract = new this.web3js.eth.Contract(
+      sevent_sem_abi,
+      seventh_sem_contract_address
+    );
+
+    return await connectContract.methods
+      .addSevenSemesterInfo(
+        iot,
+        eedm,
+        iotLab,
+        aLab,
+        sodeca,
+        studentId
+      )
+      .send({ from: this.accounts[0] });
+  }
+
+  async postEightSemesterInfo(
+    bda: string,
+    dm: string,
+    stvLab: string,
+    bdaLab: string,
+    training: string,
+    studentId: any
+  ): Promise<any> {
+    const connectContract = new this.web3js.eth.Contract(
+      eigth_sem_abi,
+      eigth_sem_contract_address
+    );
+
+    return await connectContract.methods
+      .addEightSemesterInfo(
+        bda,
+        dm,
+        stvLab,
+        bdaLab,
+        training,
+        studentId
+      )
+      .send({ from: this.accounts[0] });
+  }
+
+  async getFirstSemesterInfo(): Promise<any> {
+    const connectContract = new this.web3js.eth.Contract(
+      first_sem_abi,
+      first_sem_contract_address
+    );
+    const semesterInfo = await connectContract.methods
+      .getFirstSemester()
+      .call({ from: this.accounts[0] });
+    console.log("getFirstSemester = ", semesterInfo);
+    return semesterInfo;
+  }
+
+  async getSecondSemesterInfo(): Promise<any> {
+    const connectContract = new this.web3js.eth.Contract(
+      second_sem_abi,
+      second_sem_contract_address
+    );
+    const semesterInfo = await connectContract.methods
+      .getSecondSemester()
+      .call({ from: this.accounts[0] });
+    console.log("getSecondSemester = ", semesterInfo);
+    return semesterInfo;
+  }
+
+  async getThirdSemesterInfo(): Promise<any> {
+    const connectContract = new this.web3js.eth.Contract(
+      third_sem_abi,
+      third_sem_contract_address
+    );
+    const semesterInfo = await connectContract.methods
+      .getThirdSemester()
+      .call({ from: this.accounts[0] });
+    console.log("getThirdSemester = ", semesterInfo);
+    return semesterInfo;
+  }
+
+  async getFourthSemesterInfo(): Promise<any> {
+    const connectContract = new this.web3js.eth.Contract(
+      fourth_sem_abi,
+      fourth_sem_contract_address
+    );
+    const semesterInfo = await connectContract.methods
+      .getFourthSemester()
+      .call({ from: this.accounts[0] });
+    console.log("getFourthSemester = ", semesterInfo);
+    return semesterInfo;
+  }
+
+  async getFifthSemesterInfo(): Promise<any> {
+    const connectContract = new this.web3js.eth.Contract(
+      fifth_sem_abi,
+      fifth_sem_contract_address
+    );
+    const semesterInfo = await connectContract.methods
+      .getFiveSemester()
+      .call({ from: this.accounts[0] });
+    console.log("getFiveSemester = ", semesterInfo);
+    return semesterInfo;
+  }
+
+  async getSixthSemesterInfo(): Promise<any> {
+    const connectContract = new this.web3js.eth.Contract(
+      sixth_sem_abi,
+      sixth_sem_contract_address
+    );
+    const semesterInfo = await connectContract.methods
+      .getSixSemester()
+      .call({ from: this.accounts[0] });
+    console.log("getSixSemester = ", semesterInfo);
+    return semesterInfo;
+  }
+
+  async getSeventhSemesterInfo(): Promise<any> {
+    const connectContract = new this.web3js.eth.Contract(
+      sevent_sem_abi,
+      seventh_sem_contract_address
+    );
+    const semesterInfo = await connectContract.methods
+      .getSevenSemester()
+      .call({ from: this.accounts[0] });
+    console.log("getSevenSemester = ", semesterInfo);
+    return semesterInfo;
+  }
+
+  async getEigthSemesterInfo(): Promise<any> {
+    const connectContract = new this.web3js.eth.Contract(
+      eigth_sem_abi,
+      eigth_sem_contract_address
+    );
+    const semesterInfo = await connectContract.methods
+      .getEigthSemester()
+      .call({ from: this.accounts[0] });
+    console.log("getEigthSemester = ", semesterInfo);
+    return semesterInfo;
   }
 
   failure(message: string): void {

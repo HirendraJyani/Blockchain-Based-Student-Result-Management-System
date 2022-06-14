@@ -1,1540 +1,1626 @@
 <div class="home-nav">
-    <div class="row">
-      <div class="col-4"><h4>FILL STUDENT DETAILS</h4></div>
-      <div class="col-8"><a routerLink="../../admin">ADMIN</a></div>
-    </div>
+  <div class="row">
+    <div class="col-4"><h4>FILL STUDENT DETAILS</h4></div>
+    <div class="col-8"><a routerLink="../../../admin">ADMIN</a></div>
   </div>
-  <hr />
-  <div class="admin-body">
-    <div class="form-body">
-      <form *ngIf="semester == 1" [formGroup]="uiDataService.semesterFormGroup" class="row g-3">
-        <div class="col-md-6">
-          <label for="inputEmail4" class="form-label">Student Name</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputEmail4"
-            name="name"
-            placeholder="Student Name"
-            formControlName="studentName"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">Roll No.</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            name="rollno"
-            placeholder="Roll No."
-            formControlName="rollNo"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputEmail4" class="form-label">Branch</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputEmail4"
-            placeholder="Branch"
-            formControlName="batch"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">Email</label>
-          <input
-            type="text"
-            class="form-control"
-            id="Email"
-            placeholder="Email"
-            formControlName="email"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputEmail4" class="form-label">Father's Name</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputEmail4"
-            placeholder="Father's Name"
-            formControlName="father"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">Mother's Name</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="Mother's Name"
-            formControlName="mother"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">College Name</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="College Name"
-            formControlName="college"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">ENGINEERING MATHEMATICS-1</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="ENGINEERING MATHEMATICS-1"
-            formControlName="mathemetics"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">ENGINEERING CHEMISTRY</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="ENGINEERING CHEMISTRY"
-            formControlName="chemistry"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">HUMAN VALUES</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="HUMAN VALUES"
-            formControlName="humanValues"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">PROGRAMMING FOR PROBLEM SOLVING</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="PROGRAMMING FOR PROBLEM SOLVING"
-            formControlName="programming"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">BASIC CIVIL ENGINEERING</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="BASIC CIVIL ENGINEERING"
-            formControlName="civil"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">ENGINEERING CHEMISTRY LAB</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="ENGINEERING CHEMISTRY LAB"
-            formControlName="chemistryLab"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">HUMAN VALUES ACTIVITIES</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="HUMAN VALUES ACTIVITIES"
-            formControlName="humanValueActivities"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">COMPUTER PROGRAMMING LAB</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="COMPUTER PROGRAMMING LAB"
-            formControlName="cpLab"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">BASIC CIVIL ENGINEERING LAB</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="BASIC CIVIL ENGINEERING LAB"
-            formControlName="civilLab"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">COMPUTER AIDED MACHINE DRAWING</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="COMPUTER AIDED MACHINE DRAWING"
-            formControlName="camd"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">SODECA</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="SODECA"
-            formControlName="sodeca"
-          />
-        </div>
-        <div class="col-12">
-          <button
-            (click)="saveSemesterData()"
-            class="btn btn-primary add-class-btn"
-          >
-            ADD SEMESTER DATA
-          </button>
-        </div>
-      </form>
+</div>
+<hr />
+<div class="admin-body">
+  <div class="form-body">
+    <form
+      *ngIf="semester == 1"
+      [formGroup]="uiDataService.semesterFormGroup"
+      class="row g-3"
+    >
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Student Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputEmail4"
+          name="name"
+          placeholder="Student Name"
+          [value]="studentObj.name"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Roll No.</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          name="rollno"
+          placeholder="Roll No."
+          [value]="studentObj.rollNo"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Branch</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputEmail4"
+          placeholder="Branch"
+          [value]="studentObj.branch"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Father's Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputEmail4"
+          placeholder="Father's Name"
+          [value]="studentObj.father"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Mother's Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="Mother's Name"
+          [value]="studentObj.mother"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">College Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="College Name"
+          [value]="studentObj.college"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >ENGINEERING MATHEMATICS-1</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="ENGINEERING MATHEMATICS-1"
+          formControlName="mathemetics"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >ENGINEERING CHEMISTRY</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="ENGINEERING CHEMISTRY"
+          formControlName="chemistry"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">HUMAN VALUES</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="HUMAN VALUES"
+          formControlName="humanValues"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >PROGRAMMING FOR PROBLEM SOLVING</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="PROGRAMMING FOR PROBLEM SOLVING"
+          formControlName="programming"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >BASIC CIVIL ENGINEERING</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="BASIC CIVIL ENGINEERING"
+          formControlName="civil"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >ENGINEERING CHEMISTRY LAB</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="ENGINEERING CHEMISTRY LAB"
+          formControlName="chemistryLab"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >HUMAN VALUES ACTIVITIES</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="HUMAN VALUES ACTIVITIES"
+          formControlName="humanValueActivities"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >COMPUTER PROGRAMMING LAB</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="COMPUTER PROGRAMMING LAB"
+          formControlName="cpLab"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >BASIC CIVIL ENGINEERING LAB</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="BASIC CIVIL ENGINEERING LAB"
+          formControlName="civilLab"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >COMPUTER AIDED MACHINE DRAWING</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="COMPUTER AIDED MACHINE DRAWING"
+          formControlName="camd"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">SODECA</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="SODECA"
+          formControlName="sodeca"
+        />
+      </div>
+      <div class="col-12">
+        <button
+          [disabled]="disableBtn"
+          (click)="saveSemesterData()"
+          class="btn btn-primary add-class-btn"
+        >
+          ADD SEMESTER DATA
+        </button>
+      </div>
+    </form>
 
-      <form *ngIf="semester == 2" [formGroup]="uiDataService.semesterFormGroup" class="row g-3">
-        <div class="col-md-6">
-          <label for="inputEmail4" class="form-label">Student Name</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputEmail4"
-            name="name"
-            placeholder="Student Name"
-            formControlName="studentName"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">Roll No.</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            name="rollno"
-            placeholder="Roll No."
-            formControlName="rollNo"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputEmail4" class="form-label">Branch</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputEmail4"
-            placeholder="Branch"
-            formControlName="batch"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">Email</label>
-          <input
-            type="text"
-            class="form-control"
-            id="Email"
-            placeholder="Email"
-            formControlName="email"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputEmail4" class="form-label">Father's Name</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputEmail4"
-            placeholder="Father's Name"
-            formControlName="father"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">Mother's Name</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="Mother's Name"
-            formControlName="mother"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">College Name</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="College Name"
-            formControlName="college"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">ENGINEERING MATHEMATICS-2</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="ENGINEERING MATHEMATICS-2"
-            formControlName="mathemetics"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">ENGINEERING PHYSICS</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="ENGINEERING PHYSICS"
-            formControlName="physics"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">COMMUNICATION SKILLS</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="COMMUNICATION SKILLS"
-            formControlName="communication"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">BASIC MECHANICAL ENGINEERING</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="BASIC MECHANICAL ENGINEERING"
-            formControlName="mechanical"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">BASIC ELECTRICAL ENGINEERING</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="BASIC ELECTRICAL ENGINEERING"
-            formControlName="electrical"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">ENGINEERING PHYSICS LAB</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="ENGINEERING PHYSICS LAB"
-            formControlName="physicsLab"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">LANGUAGE LAB</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="LANGUAGE LAB"
-            formControlName="languageLab"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">MANUFACTURING PRACTICE WORKSHOP</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="MANUFACTURING PRACTICE WORKSHOP"
-            formControlName="manufacturing"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">BASIC ELECTRICAL ENGINEERING LAB</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="BASIC ELECTRICAL ENGINEERING LAB"
-            formControlName="electricalLab"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">COMPUTER AIDED ENGINEERING GRAPHICS</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="COMPUTER AIDED ENGINEERING GRAPHICS"
-            formControlName="caeg"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">SODECA</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="SODECA"
-            formControlName="sodeca"
-          />
-        </div>
-        <div class="col-12">
-          <button
-            (click)="saveSemesterData()"
-            class="btn btn-primary add-class-btn"
-          >
-            ADD SEMESTER DATA
-          </button>
-        </div>
-      </form>
+    <form
+      *ngIf="semester == 2"
+      [formGroup]="uiDataService.semesterFormGroup"
+      class="row g-3"
+    >
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Student Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputEmail4"
+          name="name"
+          placeholder="Student Name"
+          [value]="studentObj.name"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Roll No.</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          name="rollno"
+          placeholder="Roll No."
+          [value]="studentObj.rollNo"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Branch</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputEmail4"
+          placeholder="Branch"
+          [value]="studentObj.branch"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Father's Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputEmail4"
+          placeholder="Father's Name"
+          [value]="studentObj.father"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Mother's Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="Mother's Name"
+          [value]="studentObj.mother"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">College Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="College Name"
+          [value]="studentObj.college"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >ENGINEERING MATHEMATICS-2</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="ENGINEERING MATHEMATICS-2"
+          formControlName="mathemetics"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >ENGINEERING PHYSICS</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="ENGINEERING PHYSICS"
+          formControlName="physics"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >COMMUNICATION SKILLS</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="COMMUNICATION SKILLS"
+          formControlName="communication"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >BASIC MECHANICAL ENGINEERING</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="BASIC MECHANICAL ENGINEERING"
+          formControlName="mechanical"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >BASIC ELECTRICAL ENGINEERING</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="BASIC ELECTRICAL ENGINEERING"
+          formControlName="electrical"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >ENGINEERING PHYSICS LAB</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="ENGINEERING PHYSICS LAB"
+          formControlName="physicsLab"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">LANGUAGE LAB</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="LANGUAGE LAB"
+          formControlName="languageLab"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >MANUFACTURING PRACTICE WORKSHOP</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="MANUFACTURING PRACTICE WORKSHOP"
+          formControlName="manufacturing"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >BASIC ELECTRICAL ENGINEERING LAB</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="BASIC ELECTRICAL ENGINEERING LAB"
+          formControlName="electricalLab"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >COMPUTER AIDED ENGINEERING GRAPHICS</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="COMPUTER AIDED ENGINEERING GRAPHICS"
+          formControlName="caeg"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">SODECA</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="SODECA"
+          formControlName="sodeca"
+        />
+      </div>
+      <div class="col-12">
+        <button
+          (click)="saveSemesterData()"
+          class="btn btn-primary add-class-btn"
+        >
+          ADD SEMESTER DATA
+        </button>
+      </div>
+    </form>
 
-      <form *ngIf="semester == 3" [formGroup]="uiDataService.semesterFormGroup" class="row g-3">
-        <div class="col-md-6">
-          <label for="inputEmail4" class="form-label">Student Name</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputEmail4"
-            name="name"
-            placeholder="Student Name"
-            formControlName="studentName"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">Roll No.</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            name="rollno"
-            placeholder="Roll No."
-            formControlName="rollNo"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputEmail4" class="form-label">Branch</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputEmail4"
-            placeholder="Branch"
-            formControlName="batch"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">Email</label>
-          <input
-            type="text"
-            class="form-control"
-            id="Email"
-            placeholder="Email"
-            formControlName="email"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputEmail4" class="form-label">Father's Name</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputEmail4"
-            placeholder="Father's Name"
-            formControlName="father"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">Mother's Name</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="Mother's Name"
-            formControlName="mother"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">College Name</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="College Name"
-            formControlName="college"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">ADVANCED ENGINEERING MATHEMATICS</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="ADVANCED ENGINEERING MATHEMATICS"
-            formControlName="mathemetics"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">ENGINEERING CHEMISTRY</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="ENGINEERING CHEMISTRY"
-            formControlName="chemistry"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">MANAGERIAL ECONOMICS AND FINANCIAL ACCOUNTING</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="MANAGERIAL ECONOMICS AND FINANCIAL ACCOUNTING"
-            formControlName="economics"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">DIGITAL ELECTRONICS</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="DIGITAL ELECTRONICS"
-            formControlName="electronics"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">DATA STRUCTURE AND ALGORITHIMS</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="DATA STRUCTURE AND ALGORITHIMS"
-            formControlName="dsa"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">OBJECT ORIENTED PROGRAMMING</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="OBJECT ORIENTED PROGRAMMING"
-            formControlName="oop"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">SOFTWARE ENGINEERING</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="SOFTWARE ENGINEERING"
-            formControlName="software"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">DATA STRUCTURE AND ALGORITHIMS LAB</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="DATA STRUCTURE AND ALGORITHIMS LAB"
-            formControlName="dsaLab"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">OBJECT ORIENTED PROGRAMMING LAB</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="OBJECT ORIENTED PROGRAMMING LAB"
-            formControlName="oopLab"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">SOFTWARE ENGINEERING LAB</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="SOFTWARE ENGINEERING LAB"
-            formControlName="softwareLab"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">DIGITAL ELECTRONICS LAB</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="DIGITAL ELECTRONICS LAB"
-            formControlName="electronicsLab"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">INDUSTRIAL TRAINING</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="INDUSTRIAL TRAINING"
-            formControlName="training"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">SODECA</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="SODECA"
-            formControlName="sodeca"
-          />
-        </div>
-        <div class="col-12">
-          <button
-            (click)="saveSemesterData()"
-            class="btn btn-primary add-class-btn"
-          >
-            ADD SEMESTER DATA
-          </button>
-        </div>
-      </form>
+    <form
+      *ngIf="semester == 3"
+      [formGroup]="uiDataService.semesterFormGroup"
+      class="row g-3"
+    >
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Student Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputEmail4"
+          name="name"
+          placeholder="Student Name"
+          [value]="studentObj.name"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Roll No.</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          name="rollno"
+          placeholder="Roll No."
+          [value]="studentObj.rollNo"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Branch</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputEmail4"
+          placeholder="Branch"
+          [value]="studentObj.branch"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Father's Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputEmail4"
+          placeholder="Father's Name"
+          [value]="studentObj.father"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Mother's Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="Mother's Name"
+          [value]="studentObj.mother"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">College Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="College Name"
+          [value]="studentObj.college"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >ADVANCED ENGINEERING MATHEMATICS</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="ADVANCED ENGINEERING MATHEMATICS"
+          formControlName="mathemetics"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >ENGINEERING CHEMISTRY</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="ENGINEERING CHEMISTRY"
+          formControlName="chemistry"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >MANAGERIAL ECONOMICS AND FINANCIAL ACCOUNTING</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="MANAGERIAL ECONOMICS AND FINANCIAL ACCOUNTING"
+          formControlName="economics"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >DIGITAL ELECTRONICS</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="DIGITAL ELECTRONICS"
+          formControlName="electronics"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >DATA STRUCTURE AND ALGORITHIMS</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="DATA STRUCTURE AND ALGORITHIMS"
+          formControlName="dsa"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >OBJECT ORIENTED PROGRAMMING</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="OBJECT ORIENTED PROGRAMMING"
+          formControlName="oop"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >SOFTWARE ENGINEERING</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="SOFTWARE ENGINEERING"
+          formControlName="software"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >DATA STRUCTURE AND ALGORITHIMS LAB</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="DATA STRUCTURE AND ALGORITHIMS LAB"
+          formControlName="dsaLab"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >OBJECT ORIENTED PROGRAMMING LAB</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="OBJECT ORIENTED PROGRAMMING LAB"
+          formControlName="oopLab"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >SOFTWARE ENGINEERING LAB</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="SOFTWARE ENGINEERING LAB"
+          formControlName="softwareLab"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >DIGITAL ELECTRONICS LAB</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="DIGITAL ELECTRONICS LAB"
+          formControlName="electronicsLab"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >INDUSTRIAL TRAINING</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="INDUSTRIAL TRAINING"
+          formControlName="training"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">SODECA</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="SODECA"
+          formControlName="sodeca"
+        />
+      </div>
+      <div class="col-12">
+        <button
+          [disabled]="disableBtn"
+          (click)="saveSemesterData()"
+          class="btn btn-primary add-class-btn"
+        >
+          ADD SEMESTER DATA
+        </button>
+      </div>
+    </form>
 
-      <form *ngIf="semester == 4" [formGroup]="uiDataService.semesterFormGroup" class="row g-3">
-        <div class="col-md-6">
-          <label for="inputEmail4" class="form-label">Student Name</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputEmail4"
-            name="name"
-            placeholder="Student Name"
-            formControlName="studentName"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">Roll No.</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            name="rollno"
-            placeholder="Roll No."
-            formControlName="rollNo"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputEmail4" class="form-label">Branch</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputEmail4"
-            placeholder="Branch"
-            formControlName="batch"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">Email</label>
-          <input
-            type="text"
-            class="form-control"
-            id="Email"
-            placeholder="Email"
-            formControlName="email"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputEmail4" class="form-label">Father's Name</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputEmail4"
-            placeholder="Father's Name"
-            formControlName="father"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">Mother's Name</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="Mother's Name"
-            formControlName="mother"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">College Name</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="College Name"
-            formControlName="college"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">DISCRETE MATHEMATICS STRUCTURE</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="DISCRETE MATHEMATICS STRUCTURE"
-            formControlName="mathemetics"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">TECHNICAL COMMUNICATION</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="TECHNICAL COMMUNICATION"
-            formControlName="communication"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">MICROPROCESSOR & INTERFACES</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="MICROPROCESSOR & INTERFACES"
-            formControlName="microprocessor"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">DATABASE MANAGEMENT SYSTEM</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="DATABASE MANAGEMENT SYSTEM"
-            formControlName="dbms"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">THEORY OF COMPUTATION</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="THEORY OF COMPUTATION"
-            formControlName="toc"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">DATA COMMUNICATION AND COMPUTER NETWORKS</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="DATA COMMUNICATION AND COMPUTER NETWORKS"
-            formControlName="networks"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">MICROPROCESSOR & INTERFACES LAB</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="MICROPROCESSOR & INTERFACES LAB"
-            formControlName="mpLab"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">DATABASE MANAGEMENT SYSTEM LAB</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="DATABASE MANAGEMENT SYSTEM LAB"
-            formControlName="dbmsLab"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">NETWORK PROGRAMMING LAB</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="NETWORK PROGRAMMING LAB"
-            formControlName="npLab"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">LINUX SHELL PROGRAMMING LAB</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="LINUX SHELL PROGRAMMING LAB"
-            formControlName="linux"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">JAVA LAB</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="JAVA LAB"
-            formControlName="javaLab"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">SODECA</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="SODECA"
-            formControlName="sodeca"
-          />
-        </div>
-        <div class="col-12">
-          <button
-            (click)="saveSemesterData()"
-            class="btn btn-primary add-class-btn"
-          >
-            ADD SEMESTER DATA
-          </button>
-        </div>
-      </form>
+    <form
+      *ngIf="semester == 4"
+      [formGroup]="uiDataService.semesterFormGroup"
+      class="row g-3"
+    >
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Student Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputEmail4"
+          name="name"
+          placeholder="Student Name"
+          [value]="studentObj.name"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Roll No.</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          name="rollno"
+          placeholder="Roll No."
+          [value]="studentObj.rollNo"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Branch</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputEmail4"
+          placeholder="Branch"
+          [value]="studentObj.branch"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Father's Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputEmail4"
+          placeholder="Father's Name"
+          [value]="studentObj.father"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Mother's Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="Mother's Name"
+          [value]="studentObj.mother"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">College Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="College Name"
+          [value]="studentObj.college"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >DISCRETE MATHEMATICS STRUCTURE</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="DISCRETE MATHEMATICS STRUCTURE"
+          formControlName="mathemetics"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >TECHNICAL COMMUNICATION</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="TECHNICAL COMMUNICATION"
+          formControlName="communication"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >MICROPROCESSOR & INTERFACES</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="MICROPROCESSOR & INTERFACES"
+          formControlName="microprocessor"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >DATABASE MANAGEMENT SYSTEM</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="DATABASE MANAGEMENT SYSTEM"
+          formControlName="dbms"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >THEORY OF COMPUTATION</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="THEORY OF COMPUTATION"
+          formControlName="toc"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >DATA COMMUNICATION AND COMPUTER NETWORKS</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="DATA COMMUNICATION AND COMPUTER NETWORKS"
+          formControlName="networks"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >MICROPROCESSOR & INTERFACES LAB</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="MICROPROCESSOR & INTERFACES LAB"
+          formControlName="mpLab"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >DATABASE MANAGEMENT SYSTEM LAB</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="DATABASE MANAGEMENT SYSTEM LAB"
+          formControlName="dbmsLab"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >NETWORK PROGRAMMING LAB</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="NETWORK PROGRAMMING LAB"
+          formControlName="npLab"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >LINUX SHELL PROGRAMMING LAB</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="LINUX SHELL PROGRAMMING LAB"
+          formControlName="linux"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">JAVA LAB</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="JAVA LAB"
+          formControlName="javaLab"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">SODECA</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="SODECA"
+          formControlName="sodeca"
+        />
+      </div>
+      <div class="col-12">
+        <button
+          [disabled]="disableBtn"
+          (click)="saveSemesterData()"
+          class="btn btn-primary add-class-btn"
+        >
+          ADD SEMESTER DATA
+        </button>
+      </div>
+    </form>
 
-      <form *ngIf="semester == 5" [formGroup]="uiDataService.semesterFormGroup" class="row g-3">
-        <div class="col-md-6">
-          <label for="inputEmail4" class="form-label">Student Name</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputEmail4"
-            name="name"
-            placeholder="Student Name"
-            formControlName="studentName"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">Roll No.</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            name="rollno"
-            placeholder="Roll No."
-            formControlName="rollNo"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputEmail4" class="form-label">Branch</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputEmail4"
-            placeholder="Branch"
-            formControlName="batch"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">Email</label>
-          <input
-            type="text"
-            class="form-control"
-            id="Email"
-            placeholder="Email"
-            formControlName="email"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputEmail4" class="form-label">Father's Name</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputEmail4"
-            placeholder="Father's Name"
-            formControlName="father"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">Mother's Name</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="Mother's Name"
-            formControlName="mother"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">College Name</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="College Name"
-            formControlName="college"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">INFORMATION THEORY & CODING</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="INFORMATION THEORY & CODING"
-            formControlName="itc"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">COMPILER DESIGN</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="COMPILER DESIGN"
-            formControlName="compiler"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">OPERATING SYSTEM</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="OPERATING SYSTEM"
-            formControlName="operating"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">COMPUTER GRAPHICS & MULTIMEDIA</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="COMPUTER GRAPHICS & MULTIMEDIA"
-            formControlName="graphics"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">ANALYSIS OF ALGORITHIMS</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="ANALYSIS OF ALGORITHIMS"
-            formControlName="algo"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">HUMAN-COMPUTER INTERACTION</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="HUMAN-COMPUTER INTERACTION"
-            formControlName="hci"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">COMPUTER GRAPHICS & MULTIMEDIA LAB</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="COMPUTER GRAPHICS & MULTIMEDIA LAB"
-            formControlName="graphicsLab"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">COMPILER DESIGN LAB</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="COMPILER DESIGN LAB"
-            formControlName="compilerLab"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">ANALYSIS OF ALGORITHIMS</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="ANALYSIS OF ALGORITHIMS"
-            formControlName="algoLab"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">ADVANCE JAVA LAB</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="ADVANCE JAVA LAB"
-            formControlName="javaLab"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">INDUSTRIAL TRAINING</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="INDUSTRIAL TRAINING"
-            formControlName="training"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">SODECA</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="SODECA"
-            formControlName="sodeca"
-          />
-        </div>
-        <div class="col-12">
-          <button
-            (click)="saveSemesterData()"
-            class="btn btn-primary add-class-btn"
-          >
-            ADD SEMESTER DATA
-          </button>
-        </div>
-      </form>
+    <form
+      *ngIf="semester == 5"
+      [formGroup]="uiDataService.semesterFormGroup"
+      class="row g-3"
+    >
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Student Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputEmail4"
+          name="name"
+          placeholder="Student Name"
+          [value]="studentObj.name"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Roll No.</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          name="rollno"
+          placeholder="Roll No."
+          [value]="studentObj.rollNo"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Branch</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputEmail4"
+          placeholder="Branch"
+          [value]="studentObj.branch"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Father's Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputEmail4"
+          placeholder="Father's Name"
+          [value]="studentObj.father"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Mother's Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="Mother's Name"
+          [value]="studentObj.mother"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">College Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="College Name"
+          [value]="studentObj.college"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >INFORMATION THEORY & CODING</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="INFORMATION THEORY & CODING"
+          formControlName="itc"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">COMPILER DESIGN</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="COMPILER DESIGN"
+          formControlName="compiler"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">OPERATING SYSTEM</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="OPERATING SYSTEM"
+          formControlName="operating"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >COMPUTER GRAPHICS & MULTIMEDIA</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="COMPUTER GRAPHICS & MULTIMEDIA"
+          formControlName="graphics"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >ANALYSIS OF ALGORITHIMS</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="ANALYSIS OF ALGORITHIMS"
+          formControlName="algo"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >HUMAN-COMPUTER INTERACTION</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="HUMAN-COMPUTER INTERACTION"
+          formControlName="hci"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >COMPUTER GRAPHICS & MULTIMEDIA LAB</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="COMPUTER GRAPHICS & MULTIMEDIA LAB"
+          formControlName="graphicsLab"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >COMPILER DESIGN LAB</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="COMPILER DESIGN LAB"
+          formControlName="compilerLab"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >ANALYSIS OF ALGORITHIMS</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="ANALYSIS OF ALGORITHIMS"
+          formControlName="algoLab"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">ADVANCE JAVA LAB</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="ADVANCE JAVA LAB"
+          formControlName="javaLab"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >INDUSTRIAL TRAINING</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="INDUSTRIAL TRAINING"
+          formControlName="training"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">SODECA</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="SODECA"
+          formControlName="sodeca"
+        />
+      </div>
+      <div class="col-12">
+        <button
+          [disabled]="disableBtn"
+          (click)="saveSemesterData()"
+          class="btn btn-primary add-class-btn"
+        >
+          ADD SEMESTER DATA
+        </button>
+      </div>
+    </form>
 
-      <form *ngIf="semester == 6" [formGroup]="uiDataService.semesterFormGroup" class="row g-3">
-        <div class="col-md-6">
-          <label for="inputEmail4" class="form-label">Student Name</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputEmail4"
-            name="name"
-            placeholder="Student Name"
-            formControlName="studentName"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">Roll No.</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            name="rollno"
-            placeholder="Roll No."
-            formControlName="rollNo"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputEmail4" class="form-label">Branch</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputEmail4"
-            placeholder="Branch"
-            formControlName="batch"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">Email</label>
-          <input
-            type="text"
-            class="form-control"
-            id="Email"
-            placeholder="Email"
-            formControlName="email"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputEmail4" class="form-label">Father's Name</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputEmail4"
-            placeholder="Father's Name"
-            formControlName="father"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">Mother's Name</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="Mother's Name"
-            formControlName="mother"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">College Name</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="College Name"
-            formControlName="college"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">DIGITAL IMAGE PROCESSING</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="DIGITAL IMAGE PROCESSING"
-            formControlName="image"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">MACHINE LEARNING</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="MACHINE LEARNING"
-            formControlName="machine"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">INFORMATION SECURITY SYSTEM</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="INFORMATION SECURITY SYSTEM"
-            formControlName="security"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">COMPUTER ARCHITECTURE AND ORGANIZATION </label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="COMPUTER ARCHITECTURE AND ORGANIZATION"
-            formControlName="cao"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">ARTIFICIAL INTELLIGENCE</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="ARTIFICIAL INTELLIGENCE"
-            formControlName="ai"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">CLOUD COMPUTING</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="CLOUD COMPUTING"
-            formControlName="cloud"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">DISTRIBUTED SYSTEM</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="DISTRIBUTED SYSTEM"
-            formControlName="distributed"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">COMPUTER PROGRAMMING LAB</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="COMPUTER PROGRAMMING LAB"
-            formControlName="cpLab"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">DIGITAL IMAGE PROCESSING LAB</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="DIGITAL IMAGE PROCESSING LAB"
-            formControlName="imageLab"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">MACHINE LEARNING LAB</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="MACHINE LEARNING LAB"
-            formControlName="machineLab"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">PYTHON LAB</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="PYTHON LAB"
-            formControlName="pythonLab"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">MOBILE APPLICATION DEVELOPMENT LAB</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="MOBILE APPLICATION DEVELOPMENT LAB"
-            formControlName="aapLab"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">SODECA</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="SODECA"
-            formControlName="sodeca"
-          />
-        </div>
-        <div class="col-12">
-          <button
-            (click)="saveSemesterData()"
-            class="btn btn-primary add-class-btn"
-          >
-            ADD SEMESTER DATA
-          </button>
-        </div>
-      </form>
+    <form
+      *ngIf="semester == 6"
+      [formGroup]="uiDataService.semesterFormGroup"
+      class="row g-3"
+    >
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Student Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputEmail4"
+          name="name"
+          placeholder="Student Name"
+          [value]="studentObj.name"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Roll No.</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          name="rollno"
+          placeholder="Roll No."
+          [value]="studentObj.rollNo"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Branch</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputEmail4"
+          placeholder="Branch"
+          [value]="studentObj.branch"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Father's Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputEmail4"
+          placeholder="Father's Name"
+          [value]="studentObj.father"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Mother's Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="Mother's Name"
+          [value]="studentObj.mother"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">College Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="College Name"
+          [value]="studentObj.college"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >DIGITAL IMAGE PROCESSING</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="DIGITAL IMAGE PROCESSING"
+          formControlName="image"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">MACHINE LEARNING</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="MACHINE LEARNING"
+          formControlName="machine"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >INFORMATION SECURITY SYSTEM</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="INFORMATION SECURITY SYSTEM"
+          formControlName="security"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >COMPUTER ARCHITECTURE AND ORGANIZATION
+        </label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="COMPUTER ARCHITECTURE AND ORGANIZATION"
+          formControlName="cao"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >ARTIFICIAL INTELLIGENCE</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="ARTIFICIAL INTELLIGENCE"
+          formControlName="ai"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">CLOUD COMPUTING</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="CLOUD COMPUTING"
+          formControlName="cloud"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >DISTRIBUTED SYSTEM</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="DISTRIBUTED SYSTEM"
+          formControlName="distributed"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >COMPUTER PROGRAMMING LAB</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="COMPUTER PROGRAMMING LAB"
+          formControlName="cpLab"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >DIGITAL IMAGE PROCESSING LAB</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="DIGITAL IMAGE PROCESSING LAB"
+          formControlName="imageLab"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >MACHINE LEARNING LAB</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="MACHINE LEARNING LAB"
+          formControlName="machineLab"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">PYTHON LAB</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="PYTHON LAB"
+          formControlName="pythonLab"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >MOBILE APPLICATION DEVELOPMENT LAB</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="MOBILE APPLICATION DEVELOPMENT LAB"
+          formControlName="aapLab"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">SODECA</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="SODECA"
+          formControlName="sodeca"
+        />
+      </div>
+      <div class="col-12">
+        <button
+          [disabled]="disableBtn"
+          (click)="saveSemesterData()"
+          class="btn btn-primary add-class-btn"
+        >
+          ADD SEMESTER DATA
+        </button>
+      </div>
+    </form>
 
-      <form *ngIf="semester == 7" [formGroup]="uiDataService.semesterFormGroup" class="row g-3">
-        <div class="col-md-6">
-          <label for="inputEmail4" class="form-label">Student Name</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputEmail4"
-            name="name"
-            placeholder="Student Name"
-            formControlName="studentName"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">Roll No.</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            name="rollno"
-            placeholder="Roll No."
-            formControlName="rollNo"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputEmail4" class="form-label">Branch</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputEmail4"
-            placeholder="Branch"
-            formControlName="batch"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">Email</label>
-          <input
-            type="text"
-            class="form-control"
-            id="Email"
-            placeholder="Email"
-            formControlName="email"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputEmail4" class="form-label">Father's Name</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputEmail4"
-            placeholder="Father's Name"
-            formControlName="father"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">Mother's Name</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="Mother's Name"
-            formControlName="mother"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">College Name</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="College Name"
-            formControlName="college"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">INTERNET OF THINGS</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="INTERNET OF THINGS"
-            formControlName="iot"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">ENVIRONMENTAL ENGINEERING & DISASTER MANAGEMENT</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="ENVIRONMENTAL ENGINEERING & DISASTER MANAGEMENT"
-            formControlName="eedm"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">INTERNET OF THINGS LAB</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="INTERNET OF THINGS LAB"
-            formControlName="iotLab"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">LAB</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="LAB"
-            formControlName="aLab"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">SODECA</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="SODECA"
-            formControlName="sodeca"
-          />
-        </div>
-        <div class="col-12">
-          <button
-            (click)="saveSemesterData()"
-            class="btn btn-primary add-class-btn"
-          >
-            ADD SEMESTER DATA
-          </button>
-        </div>
-      </form>
+    <form
+      *ngIf="semester == 7"
+      [formGroup]="uiDataService.semesterFormGroup"
+      class="row g-3"
+    >
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Student Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputEmail4"
+          name="name"
+          placeholder="Student Name"
+          [value]="studentObj.name"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Roll No.</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          name="rollno"
+          placeholder="Roll No."
+          [value]="studentObj.rollNo"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Branch</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputEmail4"
+          placeholder="Branch"
+          [value]="studentObj.branch"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Father's Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputEmail4"
+          placeholder="Father's Name"
+          [value]="studentObj.father"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Mother's Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="Mother's Name"
+          [value]="studentObj.mother"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">College Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="College Name"
+          [value]="studentObj.college"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >INTERNET OF THINGS</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="INTERNET OF THINGS"
+          formControlName="iot"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >ENVIRONMENTAL ENGINEERING & DISASTER MANAGEMENT</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="ENVIRONMENTAL ENGINEERING & DISASTER MANAGEMENT"
+          formControlName="eedm"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >INTERNET OF THINGS LAB</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="INTERNET OF THINGS LAB"
+          formControlName="iotLab"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">LAB</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="LAB"
+          formControlName="aLab"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">SODECA</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="SODECA"
+          formControlName="sodeca"
+        />
+      </div>
+      <div class="col-12">
+        <button
+          [disabled]="disableBtn"
+          (click)="saveSemesterData()"
+          class="btn btn-primary add-class-btn"
+        >
+          ADD SEMESTER DATA
+        </button>
+      </div>
+    </form>
 
-      <form *ngIf="semester == 8" [formGroup]="uiDataService.semesterFormGroup" class="row g-3">
-        <div class="col-md-6">
-          <label for="inputEmail4" class="form-label">Student Name</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputEmail4"
-            name="name"
-            placeholder="Student Name"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">Roll No.</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            name="rollno"
-            placeholder="Roll No."
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputEmail4" class="form-label">Branch</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputEmail4"
-            placeholder="Branch"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">Email</label>
-          <input
-            type="text"
-            class="form-control"
-            id="Email"
-            placeholder="Email"
-            formControlName="email"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputEmail4" class="form-label">Father's Name</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputEmail4"
-            placeholder="Father's Name"
-            formControlName="father"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">Mother's Name</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="Mother's Name"
-            formControlName="mother"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">College Name</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="College Name"
-            formControlName="college"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">BIG DATA ANALYTICS</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="BIG DATA ANALYTICS"
-            formControlName="bda"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">DISASTER MANAGEMENT</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="DISASTER MANAGEMENT"
-            formControlName="dm"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">STV LAB</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="STV LAB"
-            formControlName="stvLab"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">BIG DATA ANALYTICS LAB</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="BIG DATA ANALYTICS LAB"
-            formControlName="bdaLab"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">INDUSTRIAL TRAINING</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputPassword4"
-            placeholder="INDUSTRIAL TRAINING"
-            formControlName="training"
-          />
-        </div>
-        <div class="col-12">
-          <button
-            (click)="saveSemesterData()"
-            class="btn btn-primary add-class-btn"
-          >
-            ADD SEMESTER DATA
-          </button>
-        </div>
-      </form>
-    </div>
+    <form
+      *ngIf="semester == 8"
+      [formGroup]="uiDataService.semesterFormGroup"
+      class="row g-3"
+    >
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Student Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputEmail4"
+          name="name"
+          placeholder="Student Name"
+          [value]="studentObj.name"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Roll No.</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          name="rollno"
+          placeholder="Roll No."
+          [value]="studentObj.rollNo"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Branch</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputEmail4"
+          placeholder="Branch"
+          [value]="studentObj.branch"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Father's Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputEmail4"
+          placeholder="Father's Name"
+          [value]="studentObj.father"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Mother's Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="Mother's Name"
+          [value]="studentObj.mother"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">College Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="College Name"
+          [value]="studentObj.college"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >BIG DATA ANALYTICS</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="BIG DATA ANALYTICS"
+          formControlName="bda"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >DISASTER MANAGEMENT</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="DISASTER MANAGEMENT"
+          formControlName="dm"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">STV LAB</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="STV LAB"
+          formControlName="stvLab"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >BIG DATA ANALYTICS LAB</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="BIG DATA ANALYTICS LAB"
+          formControlName="bdaLab"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >INDUSTRIAL TRAINING</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="INDUSTRIAL TRAINING"
+          formControlName="training"
+        />
+      </div>
+      <div class="col-12">
+        <button
+          [disabled]="disableBtn"
+          (click)="saveSemesterData()"
+          class="btn btn-primary add-class-btn"
+        >
+          ADD SEMESTER DATA
+        </button>
+      </div>
+    </form>
   </div>
-  <hr />
-  
-  <div class="admin-classes">
-    <h5 class="mt-5">Students List</h5>
-    <div class="student-container">
-      <div class="row students-data" *ngFor="let student of studentArray">
-        <div class="col-12 student-report-header">
-          <h2>Bikaner Technical University, Bikaner</h2>
-          <h3>B.Tech Examination on June-2022</h3>
-        </div>
-        <div class="col-md-6">
-          <label for="">Student Name :</label>
-          <p>{{ student.name }}</p>
-        </div>
-        <div class="col-md-6">
-          <label for="">Roll No. :</label>
-          <p>{{ student.rollno }}</p>
-        </div>
-        <div class="col-md-6">
-          <label for="">Branch :</label>
-          <p>{{ student.batch }}</p>
-        </div>
-        <div class="col-md-6">
-          <label for="">Email :</label>
-          <p>{{ student.email }}</p>
-        </div>
-        <div class="col-md-6">
-          <label for="">Father's Name :</label>
-          <p>{{ student.father }}</p>
-        </div>
-        <div class="col-md-6">
-          <label for="">Mother's Name :</label>
-          <p>{{ student.mother }}</p>
-        </div>
-        <div class="col-md-6">
-          <label for="">Admission Year :</label>
-          <p>{{ student.admission }}</p>
-        </div>
-        <div class="col-md-6">
-          <label for="">College Name :</label>
-          <p>{{ student.college }}</p>
-        </div>
-        <div class="col-12 sem-btn">
-          <button class="btn btn-primary add-class-btn" routerLink="../../student-form-list/{{student.studentId}}">SEMESTER DATA</button>
-        </div>
+</div>
+<hr />
+
+<div class="admin-classes">
+  <h5 class="mt-5">Students List</h5>
+  <div class="student-container">
+    <div class="row students-data" *ngFor="let student of studentArray">
+      <div class="col-12 student-report-header">
+        <h2>Bikaner Technical University, Bikaner</h2>
+        <h3>B.Tech Examination on June-2022</h3>
+      </div>
+      <div class="col-md-6">
+        <label for="">Student Name :</label>
+        <p>{{ student.name }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">Roll No. :</label>
+        <p>{{ student.rollno }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">Branch :</label>
+        <p>{{ student.batch }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">Email :</label>
+        <p>{{ student.email }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">Father's Name :</label>
+        <p>{{ student.father }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">Mother's Name :</label>
+        <p>{{ student.mother }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">Admission Year :</label>
+        <p>{{ student.admission }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">College Name :</label>
+        <p>{{ student.college }}</p>
       </div>
     </div>
   </div>
-  
+</div>

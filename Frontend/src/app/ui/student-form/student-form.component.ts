@@ -11,6 +11,8 @@ import { UiDataService } from "../ui-data.service";
 })
 export class StudentFormComponent implements OnInit {
   studentArray = [];
+  classId: any;
+
   constructor(
     public uiDataService: UiDataService,
     private fb: FormBuilder,
@@ -19,6 +21,7 @@ export class StudentFormComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.classId = this.route.snapshot.params["classId"];
     this.connectAccount();
     this.initForm();
   }
@@ -61,7 +64,6 @@ export class StudentFormComponent implements OnInit {
     const mother = this.uiDataService.studentFormGroup.value.mother;
     const admission = this.uiDataService.studentFormGroup.value.admission;
     const college = this.uiDataService.studentFormGroup.value.college;
-    const classId = this.route.snapshot.params["classId"];
     const studentId = new Date().getTime();
     this.contractService
       .postStudentInfo(
@@ -73,7 +75,7 @@ export class StudentFormComponent implements OnInit {
         mother,
         admission,
         college,
-        classId,
+        this.classId,
         studentId
       )
       .then((res: any) => {
@@ -90,7 +92,7 @@ export class StudentFormComponent implements OnInit {
       .getStudentInfo()
       .then((res2: any) => {
         console.log("RES2 = ", res2);
-        this.studentArray = res2;
+        this.studentArray = res2.filter((d) => d.classId === this.classId);
       })
       .catch((err) => {
         console.log("get student error - ", err);
