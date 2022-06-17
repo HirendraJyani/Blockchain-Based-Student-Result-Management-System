@@ -12,6 +12,7 @@ import { UiDataService } from "../ui-data.service";
 export class StudentFormComponent implements OnInit {
   studentArray = [];
   classId: any;
+  type: any;
 
   constructor(
     public uiDataService: UiDataService,
@@ -22,6 +23,8 @@ export class StudentFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.classId = this.route.snapshot.params["classId"];
+    this.type = this.route.snapshot.params["type"];
+    console.log("type = ", this.type);
     this.connectAccount();
     this.initForm();
   }

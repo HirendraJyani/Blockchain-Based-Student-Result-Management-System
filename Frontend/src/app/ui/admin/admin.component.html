@@ -16,9 +16,9 @@
       <h5 class="mt-5">Classes List</h5>
       <div class="classes-container">
         <div class="row">
-          <div class="col-3"><p><a href="../student-form/1">CLASS-1</a></p></div>
+          <div class="col-3"><p><a href="../student-form/1/post">CLASS-1</a></p></div>
           <div class="col-3" *ngFor="let class of classArray">
-            <p><a routerLink="../student-form/{{class.classId}}">{{class.className}}</a></p>
+            <p><a routerLink="../student-form/{{class.classId}}/post">{{class.className}}</a></p>
           </div>
         </div>
       </div>

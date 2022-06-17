@@ -28,15 +28,15 @@ export const UiRoute: Routes = [
     component: AdminComponent,
   },
   {
-    path: "student-form/:classId",
+    path: "student-form/:classId/:type",
     component: StudentFormComponent,
   },
   {
-    path: "semester-form-list/:studentId",
+    path: "semester-form-list/:studentId/:type",
     component: SemesterFormListComponent,
   },
   {
-    path: "semester-form/:sem/:studentId",
+    path: "semester-form/:sem/:studentId/:type",
     component: SemesterFormComponent,
   },
 ];

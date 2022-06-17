@@ -8,9 +8,11 @@ import { ActivatedRoute } from "@angular/router";
 })
 export class SemesterFormListComponent implements OnInit {
   studentId: any;
+  type: any;
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.studentId = this.route.snapshot.params["studentId"];
+    this.type = this.route.snapshot.params["type"];
   }
 }

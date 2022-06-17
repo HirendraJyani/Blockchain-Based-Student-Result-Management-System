@@ -1,152 +1,210 @@
-<div class="home-nav">
-  <div class="row">
-    <div class="col-4"><h4>FILL STUDENT DETAILS</h4></div>
-    <div class="col-8"><a routerLink="../../admin">ADMIN</a></div>
+<span *ngIf="type == 'post'">
+  <div class="home-nav">
+    <div class="row">
+      <div class="col-4"><h4>STUDENT REGISTRATION</h4></div>
+      <div class="col-8"><a routerLink="../../../admin">ADMIN</a></div>
+    </div>
   </div>
-</div>
-<hr />
-<div class="admin-body">
-  <div class="form-body">
-    <form [formGroup]="uiDataService.studentFormGroup" class="row g-3">
-      <div class="col-md-6">
-        <label for="inputEmail4" class="form-label">Student Name</label>
-        <input
-          type="text"
-          class="form-control"
-          id="inputEmail4"
-          name="name"
-          placeholder="Student Name"
-          formControlName="studentName"
-        />
-      </div>
-      <div class="col-md-6">
-        <label for="inputPassword4" class="form-label">Roll No.</label>
-        <input
-          type="text"
-          class="form-control"
-          id="inputPassword4"
-          name="rollno"
-          placeholder="Roll No."
-          formControlName="rollNo"
-        />
-      </div>
-      <div class="col-md-6">
-        <label for="inputEmail4" class="form-label">Branch</label>
-        <input
-          type="text"
-          class="form-control"
-          id="inputEmail4"
-          placeholder="Branch"
-          formControlName="batch"
-        />
-      </div>
-      <div class="col-md-6">
-        <label for="inputPassword4" class="form-label">Email</label>
-        <input
-          type="text"
-          class="form-control"
-          id="Email"
-          placeholder="Email"
-          formControlName="email"
-        />
-      </div>
-      <div class="col-md-6">
-        <label for="inputEmail4" class="form-label">Father's Name</label>
-        <input
-          type="text"
-          class="form-control"
-          id="inputEmail4"
-          placeholder="Father's Name"
-          formControlName="father"
-        />
-      </div>
-      <div class="col-md-6">
-        <label for="inputPassword4" class="form-label">Mother's Name</label>
-        <input
-          type="text"
-          class="form-control"
-          id="inputPassword4"
-          placeholder="Mother's Name"
-          formControlName="mother"
-        />
-      </div>
-      <div class="col-md-6">
-        <label for="inputPassword4" class="form-label">Year Of Admission</label>
-        <input
-          type="text"
-          class="form-control"
-          id="inputPassword4"
-          placeholder="Year Of Admission"
-          formControlName="admission"
-        />
-      </div>
-      <div class="col-md-6">
-        <label for="inputPassword4" class="form-label">College Name</label>
-        <input
-          type="text"
-          class="form-control"
-          id="inputPassword4"
-          placeholder="College Name"
-          formControlName="college"
-        />
-      </div>
-
-      <div class="col-12">
-        <button
-          (click)="saveStudentData()"
-          class="btn btn-primary add-class-btn"
-        >
-          ADD Student
-        </button>
-      </div>
-    </form>
+  <hr />
+  <div class="admin-body">
+    <div class="form-body">
+      <form [formGroup]="uiDataService.studentFormGroup" class="row g-3">
+        <div class="col-md-6">
+          <label for="inputEmail4" class="form-label">Student Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="inputEmail4"
+            name="name"
+            placeholder="Student Name"
+            formControlName="studentName"
+          />
+        </div>
+        <div class="col-md-6">
+          <label for="inputPassword4" class="form-label">Roll No.</label>
+          <input
+            type="text"
+            class="form-control"
+            id="inputPassword4"
+            name="rollno"
+            placeholder="Roll No."
+            formControlName="rollNo"
+          />
+        </div>
+        <div class="col-md-6">
+          <label for="inputEmail4" class="form-label">Branch</label>
+          <input
+            type="text"
+            class="form-control"
+            id="inputEmail4"
+            placeholder="Branch"
+            formControlName="batch"
+          />
+        </div>
+        <div class="col-md-6">
+          <label for="inputPassword4" class="form-label">Email</label>
+          <input
+            type="text"
+            class="form-control"
+            id="Email"
+            placeholder="Email"
+            formControlName="email"
+          />
+        </div>
+        <div class="col-md-6">
+          <label for="inputEmail4" class="form-label">Father's Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="inputEmail4"
+            placeholder="Father's Name"
+            formControlName="father"
+          />
+        </div>
+        <div class="col-md-6">
+          <label for="inputPassword4" class="form-label">Mother's Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="inputPassword4"
+            placeholder="Mother's Name"
+            formControlName="mother"
+          />
+        </div>
+        <div class="col-md-6">
+          <label for="inputPassword4" class="form-label">Year Of Admission</label>
+          <input
+            type="text"
+            class="form-control"
+            id="inputPassword4"
+            placeholder="Year Of Admission"
+            formControlName="admission"
+          />
+        </div>
+        <div class="col-md-6">
+          <label for="inputPassword4" class="form-label">College Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="inputPassword4"
+            placeholder="College Name"
+            formControlName="college"
+          />
+        </div>
+  
+        <div class="col-12">
+          <button
+            (click)="saveStudentData()"
+            class="btn btn-primary add-class-btn"
+          >
+            ADD Student
+          </button>
+        </div>
+      </form>
+    </div>
   </div>
-</div>
-<hr />
-
-<div class="admin-classes">
-  <h5 class="mt-5">Students List</h5>
-  <div class="student-container">
-    <div class="row students-data" *ngFor="let student of studentArray">
-      <div class="col-12 student-report-header">
-        <h2>Bikaner Technical University, Bikaner</h2>
-        <h3>B.Tech Examination on June-2022</h3>
-      </div>
-      <div class="col-md-6">
-        <label for="">Student Name :</label>
-        <p>{{ student.name }}</p>
-      </div>
-      <div class="col-md-6">
-        <label for="">Roll No. :</label>
-        <p>{{ student.rollno }}</p>
-      </div>
-      <div class="col-md-6">
-        <label for="">Branch :</label>
-        <p>{{ student.batch }}</p>
-      </div>
-      <div class="col-md-6">
-        <label for="">Email :</label>
-        <p>{{ student.email }}</p>
-      </div>
-      <div class="col-md-6">
-        <label for="">Father's Name :</label>
-        <p>{{ student.father }}</p>
-      </div>
-      <div class="col-md-6">
-        <label for="">Mother's Name :</label>
-        <p>{{ student.mother }}</p>
-      </div>
-      <div class="col-md-6">
-        <label for="">Admission Year :</label>
-        <p>{{ student.admission }}</p>
-      </div>
-      <div class="col-md-6">
-        <label for="">College Name :</label>
-        <p>{{ student.college }}</p>
-      </div>
-      <div class="col-12 sem-btn">
-        <button class="btn btn-primary add-class-btn" routerLink="../../semester-form-list/{{student.studentId}}">SEMESTER DATA</button>
+  <hr />
+  
+  <div class="admin-classes">
+    <h5 class="mt-5">Students List</h5>
+    <div class="student-container">
+      <div class="row students-data" *ngFor="let student of studentArray">
+        <div class="col-12 student-report-header">
+          <h3>STUDENT DETAILS</h3>
+        </div>
+        <div class="col-md-6">
+          <label for="">Student Name :</label>
+          <p>{{ student.name }}</p>
+        </div>
+        <div class="col-md-6">
+          <label for="">Roll No. :</label>
+          <p>{{ student.rollno }}</p>
+        </div>
+        <div class="col-md-6">
+          <label for="">Branch :</label>
+          <p>{{ student.batch }}</p>
+        </div>
+        <div class="col-md-6">
+          <label for="">Email :</label>
+          <p>{{ student.email }}</p>
+        </div>
+        <div class="col-md-6">
+          <label for="">Father's Name :</label>
+          <p>{{ student.father }}</p>
+        </div>
+        <div class="col-md-6">
+          <label for="">Mother's Name :</label>
+          <p>{{ student.mother }}</p>
+        </div>
+        <div class="col-md-6">
+          <label for="">Admission Year :</label>
+          <p>{{ student.admission }}</p>
+        </div>
+        <div class="col-md-6">
+          <label for="">College Name :</label>
+          <p>{{ student.college }}</p>
+        </div>
+        <div class="col-12 sem-btn">
+          <button class="btn btn-primary add-class-btn" routerLink="../../../semester-form-list/{{student.studentId}}/post">SEMESTER DATA</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
+</span>
+
+<span *ngIf="type == 'get'">
+
+  <div class="home-nav">
+    <div class="row">
+      <div class="col-4"><h4>STUDENT DETAIL PAGE</h4></div>
+      <div class="col-8"><a routerLink="../../../home">HOME</a></div>
+    </div>
+  </div>
+  <hr />
+
+  <div class="admin-classes">
+    <h5 class="mt-5">Students List</h5>
+    <div class="student-container">
+      <div class="row students-data" *ngFor="let student of studentArray">
+        <div class="col-12 student-report-header">
+          <h3>STUDENT DETAILS</h3>
+        </div>
+        <div class="col-md-6">
+          <label for="">Student Name :</label>
+          <p>{{ student.name }}</p>
+        </div>
+        <div class="col-md-6">
+          <label for="">Roll No. :</label>
+          <p>{{ student.rollno }}</p>
+        </div>
+        <div class="col-md-6">
+          <label for="">Branch :</label>
+          <p>{{ student.batch }}</p>
+        </div>
+        <div class="col-md-6">
+          <label for="">Email :</label>
+          <p>{{ student.email }}</p>
+        </div>
+        <div class="col-md-6">
+          <label for="">Father's Name :</label>
+          <p>{{ student.father }}</p>
+        </div>
+        <div class="col-md-6">
+          <label for="">Mother's Name :</label>
+          <p>{{ student.mother }}</p>
+        </div>
+        <div class="col-md-6">
+          <label for="">Admission Year :</label>
+          <p>{{ student.admission }}</p>
+        </div>
+        <div class="col-md-6">
+          <label for="">College Name :</label>
+          <p>{{ student.college }}</p>
+        </div>
+        <div class="col-12 sem-btn">
+          <button class="btn btn-primary add-class-btn" routerLink="../../../semester-form-list/{{student.studentId}}/{{type}}">SEMESTER DATA</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</span>

@@ -1,12 +1,12 @@
-export const contract_address = '0xAD1f779276F4cB731BE044eD862fE38f7d3bffFb';
-export const first_sem_contract_address = '0xEC377874620B0954B65a16edFCeE5A53a669E3B5';
-export const second_sem_contract_address = '0x6D38B67727036BAB5a8CBc0BC2e853CB5521651C';
-export const third_sem_contract_address = '0xd8D82ed531805A8f692b0c7Ce519013433267bFD';
-export const fourth_sem_contract_address = '0xD08A0D74b6bf8cC893469e305b6fa361D3090E2d';
-export const fifth_sem_contract_address = '0x934fc6E039De5Bced4A740B878c68b9eDCcf87d0';
-export const sixth_sem_contract_address = '0x5D8b416dBdfBB9F4Ccb6CC8A73dD9c36f2152DcA';
-export const seventh_sem_contract_address = '0xA3Cbf49Fc14942063B6E051Ca08acd992A76Ea52';
-export const eigth_sem_contract_address = '0x8176dd4e13b7dbfED2d50cD67aDe1738edd7E1A8';
+export const contract_address = '0x8DfB9df396E30d977aaAe5c0F7fCaEA05f52B8A3';
+export const first_sem_contract_address = '0x5CF7C964e3585d01310C9b6cba61CF6E858ADFd4';
+export const second_sem_contract_address = '0x7974E2fa549F0e7182eA6a9d9AD5B601a8D8723B';
+export const third_sem_contract_address = '0x7e3aFc19B4bF7B87960AC39B35a52C679BEBa3eA';
+export const fourth_sem_contract_address = '0x92510C7EBf2029F7D32d2227c62Fa02Cc806A258';
+export const fifth_sem_contract_address = '0x477b488BB7A2c3cEd7118Cf8F5E4e8Bfe9b10897';
+export const sixth_sem_contract_address = '0x015eDbbb39a12B73E15eD53B136B09FeA6692fCE';
+export const seventh_sem_contract_address = '0xFf8C83083aBE6CA04087Ac259C263354C2aD83C0';
+export const eigth_sem_contract_address = '0x375d7386b0097e34860aF25dc25885d3dA6de705';
 
 export const contract_abi = [
   {

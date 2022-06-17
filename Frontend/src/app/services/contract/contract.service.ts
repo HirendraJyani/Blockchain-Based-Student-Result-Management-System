@@ -557,7 +557,7 @@ export class ContractService {
       eigth_sem_contract_address
     );
     const semesterInfo = await connectContract.methods
-      .getEigthSemester()
+      .getEightSemester()
       .call({ from: this.accounts[0] });
     console.log("getEigthSemester = ", semesterInfo);
     return semesterInfo;

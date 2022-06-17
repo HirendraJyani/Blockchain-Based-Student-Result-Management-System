@@ -7,23 +7,14 @@
     </div>
     <hr />
     <div class="home-body">
-      <div class="home-classes">
+      <div class="admin-classes">
         <h5 class="mt-5">Classes List</h5>
         <div class="classes-container">
           <div class="row">
-            <div class="col-3">
-              <p><a routerLink="../student-list">CLASS-1</a></p>
+            <div class="col-3"><p><a href="../student-form/1/get">CLASS-1</a></p></div>
+            <div class="col-3" *ngFor="let class of classArray">
+              <p><a routerLink="../student-form/{{class.classId}}/get">{{class.className}}</a></p>
             </div>
-            <!-- <% for(var i=0; i < classNameArray.length; i++) { %>
-
-              <div class="col-3">
-                <p>
-                  <a href="/result/<%= classNameArray[i].classId %>"
-                    ><%= classNameArray[i].className %></a
-                  >
-                </p>
-              </div>
-              <% } %> -->
           </div>
         </div>
       </div>

@@ -9,6 +9,7 @@ import { ContractService } from "src/app/services/contract/contract.service";
 export class HomeComponent implements OnInit {
   ContractName = "";
   direction: any;
+  classArray = [];
 
   constructor(private contracts: ContractService) {}
 
@@ -23,12 +24,25 @@ export class HomeComponent implements OnInit {
     });
   }
 
+  getClasses(): void {
+    this.contracts
+      .getClasses()
+      .then((res2: any) => {
+        console.log("RES2 = ", res2);
+        this.classArray = res2;
+      })
+      .catch((err) => {
+        console.log("get class error - ", err);
+      });
+  }
+
   connectAccount(): void {
     this.contracts
       .connectAccount()
       .then((value: any) => {
         console.log("Accounts 3= ");
         this.direction = value;
+        this.getClasses();
       })
       .catch((error: any) => {
         console.log("Accounts 4= ");
