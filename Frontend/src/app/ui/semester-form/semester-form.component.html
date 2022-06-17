@@ -1,0 +1,3258 @@
+<div class="home-nav">
+  <div class="row">
+    <div class="col-4">
+      <h4 *ngIf="semester != 9">
+        STUDENT RESULT DETAILS FOR SEMESTER {{ semester }}
+      </h4>
+      <h4 *ngIf="semester == 9">FINAL RESULT</h4>
+    </div>
+    <div *ngIf="type == 'get'" class="col-8">
+      <a routerLink="../../../../home"  class="me-3">Home</a>
+    </div>
+    <div *ngIf="type == 'post'" class="col-8">
+      <a routerLink="../../../../admin"  class="me-3">Admin</a>
+    </div>
+  </div>
+</div>
+<hr />
+<div *ngIf="semester != 9" class="admin-body">
+  <div *ngIf="type == 'post'" class="form-body">
+    <form
+      *ngIf="semester == 1"
+      [formGroup]="uiDataService.semesterFormGroup"
+      class="row g-3"
+    >
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Student Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputEmail4"
+          name="name"
+          placeholder="Student Name"
+          [value]="studentObj.name"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Roll No.</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          name="rollno"
+          placeholder="Roll No."
+          [value]="studentObj.rollNo"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Branch</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputEmail4"
+          placeholder="Branch"
+          [value]="studentObj.branch"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Father's Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputEmail4"
+          placeholder="Father's Name"
+          [value]="studentObj.father"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Mother's Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="Mother's Name"
+          [value]="studentObj.mother"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">College Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="College Name"
+          [value]="studentObj.college"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >ENGINEERING MATHEMATICS-1</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="ENGINEERING MATHEMATICS-1"
+          formControlName="mathemetics"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >ENGINEERING CHEMISTRY</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="ENGINEERING CHEMISTRY"
+          formControlName="chemistry"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">HUMAN VALUES</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="HUMAN VALUES"
+          formControlName="humanValues"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >PROGRAMMING FOR PROBLEM SOLVING</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="PROGRAMMING FOR PROBLEM SOLVING"
+          formControlName="programming"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >BASIC CIVIL ENGINEERING</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="BASIC CIVIL ENGINEERING"
+          formControlName="civil"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >ENGINEERING CHEMISTRY LAB</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="ENGINEERING CHEMISTRY LAB"
+          formControlName="chemistryLab"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >HUMAN VALUES ACTIVITIES</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="HUMAN VALUES ACTIVITIES"
+          formControlName="humanValueActivities"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >COMPUTER PROGRAMMING LAB</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="COMPUTER PROGRAMMING LAB"
+          formControlName="cpLab"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >BASIC CIVIL ENGINEERING LAB</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="BASIC CIVIL ENGINEERING LAB"
+          formControlName="civilLab"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >COMPUTER AIDED MACHINE DRAWING</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="COMPUTER AIDED MACHINE DRAWING"
+          formControlName="camd"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">SODECA</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="SODECA"
+          formControlName="sodeca"
+        />
+      </div>
+      <div class="col-12">
+        <button
+          [disabled]="disableBtn"
+          (click)="saveSemesterData()"
+          class="btn btn-primary add-class-btn"
+        >
+          ADD SEMESTER DATA
+        </button>
+      </div>
+    </form>
+
+    <form
+      *ngIf="semester == 2"
+      [formGroup]="uiDataService.semesterFormGroup"
+      class="row g-3"
+    >
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Student Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputEmail4"
+          name="name"
+          placeholder="Student Name"
+          [value]="studentObj.name"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Roll No.</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          name="rollno"
+          placeholder="Roll No."
+          [value]="studentObj.rollNo"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Branch</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputEmail4"
+          placeholder="Branch"
+          [value]="studentObj.branch"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Father's Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputEmail4"
+          placeholder="Father's Name"
+          [value]="studentObj.father"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Mother's Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="Mother's Name"
+          [value]="studentObj.mother"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">College Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="College Name"
+          [value]="studentObj.college"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >ENGINEERING MATHEMATICS-2</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="ENGINEERING MATHEMATICS-2"
+          formControlName="mathemetics"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >ENGINEERING PHYSICS</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="ENGINEERING PHYSICS"
+          formControlName="physics"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >COMMUNICATION SKILLS</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="COMMUNICATION SKILLS"
+          formControlName="communication"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >BASIC MECHANICAL ENGINEERING</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="BASIC MECHANICAL ENGINEERING"
+          formControlName="mechanical"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >BASIC ELECTRICAL ENGINEERING</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="BASIC ELECTRICAL ENGINEERING"
+          formControlName="electrical"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >ENGINEERING PHYSICS LAB</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="ENGINEERING PHYSICS LAB"
+          formControlName="physicsLab"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">LANGUAGE LAB</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="LANGUAGE LAB"
+          formControlName="languageLab"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >MANUFACTURING PRACTICE WORKSHOP</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="MANUFACTURING PRACTICE WORKSHOP"
+          formControlName="manufacturing"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >BASIC ELECTRICAL ENGINEERING LAB</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="BASIC ELECTRICAL ENGINEERING LAB"
+          formControlName="electricalLab"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >COMPUTER AIDED ENGINEERING GRAPHICS</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="COMPUTER AIDED ENGINEERING GRAPHICS"
+          formControlName="caeg"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">SODECA</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="SODECA"
+          formControlName="sodeca"
+        />
+      </div>
+      <div class="col-12">
+        <button
+          (click)="saveSemesterData()"
+          class="btn btn-primary add-class-btn"
+        >
+          ADD SEMESTER DATA
+        </button>
+      </div>
+    </form>
+
+    <form
+      *ngIf="semester == 3"
+      [formGroup]="uiDataService.semesterFormGroup"
+      class="row g-3"
+    >
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Student Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputEmail4"
+          name="name"
+          placeholder="Student Name"
+          [value]="studentObj.name"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Roll No.</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          name="rollno"
+          placeholder="Roll No."
+          [value]="studentObj.rollNo"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Branch</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputEmail4"
+          placeholder="Branch"
+          [value]="studentObj.branch"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Father's Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputEmail4"
+          placeholder="Father's Name"
+          [value]="studentObj.father"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Mother's Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="Mother's Name"
+          [value]="studentObj.mother"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">College Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="College Name"
+          [value]="studentObj.college"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >ADVANCED ENGINEERING MATHEMATICS</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="ADVANCED ENGINEERING MATHEMATICS"
+          formControlName="mathemetics"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >ENGINEERING CHEMISTRY</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="ENGINEERING CHEMISTRY"
+          formControlName="chemistry"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >MANAGERIAL ECONOMICS AND FINANCIAL ACCOUNTING</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="MANAGERIAL ECONOMICS AND FINANCIAL ACCOUNTING"
+          formControlName="economics"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >DIGITAL ELECTRONICS</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="DIGITAL ELECTRONICS"
+          formControlName="electronics"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >DATA STRUCTURE AND ALGORITHIMS</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="DATA STRUCTURE AND ALGORITHIMS"
+          formControlName="dsa"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >OBJECT ORIENTED PROGRAMMING</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="OBJECT ORIENTED PROGRAMMING"
+          formControlName="oop"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >SOFTWARE ENGINEERING</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="SOFTWARE ENGINEERING"
+          formControlName="software"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >DATA STRUCTURE AND ALGORITHIMS LAB</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="DATA STRUCTURE AND ALGORITHIMS LAB"
+          formControlName="dsaLab"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >OBJECT ORIENTED PROGRAMMING LAB</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="OBJECT ORIENTED PROGRAMMING LAB"
+          formControlName="oopLab"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >SOFTWARE ENGINEERING LAB</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="SOFTWARE ENGINEERING LAB"
+          formControlName="softwareLab"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >DIGITAL ELECTRONICS LAB</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="DIGITAL ELECTRONICS LAB"
+          formControlName="electronicsLab"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >INDUSTRIAL TRAINING</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="INDUSTRIAL TRAINING"
+          formControlName="training"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">SODECA</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="SODECA"
+          formControlName="sodeca"
+        />
+      </div>
+      <div class="col-12">
+        <button
+          [disabled]="disableBtn"
+          (click)="saveSemesterData()"
+          class="btn btn-primary add-class-btn"
+        >
+          ADD SEMESTER DATA
+        </button>
+      </div>
+    </form>
+
+    <form
+      *ngIf="semester == 4"
+      [formGroup]="uiDataService.semesterFormGroup"
+      class="row g-3"
+    >
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Student Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputEmail4"
+          name="name"
+          placeholder="Student Name"
+          [value]="studentObj.name"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Roll No.</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          name="rollno"
+          placeholder="Roll No."
+          [value]="studentObj.rollNo"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Branch</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputEmail4"
+          placeholder="Branch"
+          [value]="studentObj.branch"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Father's Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputEmail4"
+          placeholder="Father's Name"
+          [value]="studentObj.father"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Mother's Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="Mother's Name"
+          [value]="studentObj.mother"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">College Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="College Name"
+          [value]="studentObj.college"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >DISCRETE MATHEMATICS STRUCTURE</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="DISCRETE MATHEMATICS STRUCTURE"
+          formControlName="mathemetics"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >TECHNICAL COMMUNICATION</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="TECHNICAL COMMUNICATION"
+          formControlName="communication"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >MICROPROCESSOR & INTERFACES</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="MICROPROCESSOR & INTERFACES"
+          formControlName="microprocessor"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >DATABASE MANAGEMENT SYSTEM</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="DATABASE MANAGEMENT SYSTEM"
+          formControlName="dbms"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >THEORY OF COMPUTATION</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="THEORY OF COMPUTATION"
+          formControlName="toc"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >DATA COMMUNICATION AND COMPUTER NETWORKS</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="DATA COMMUNICATION AND COMPUTER NETWORKS"
+          formControlName="networks"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >MICROPROCESSOR & INTERFACES LAB</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="MICROPROCESSOR & INTERFACES LAB"
+          formControlName="mpLab"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >DATABASE MANAGEMENT SYSTEM LAB</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="DATABASE MANAGEMENT SYSTEM LAB"
+          formControlName="dbmsLab"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >NETWORK PROGRAMMING LAB</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="NETWORK PROGRAMMING LAB"
+          formControlName="npLab"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >LINUX SHELL PROGRAMMING LAB</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="LINUX SHELL PROGRAMMING LAB"
+          formControlName="linux"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">JAVA LAB</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="JAVA LAB"
+          formControlName="javaLab"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">SODECA</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="SODECA"
+          formControlName="sodeca"
+        />
+      </div>
+      <div class="col-12">
+        <button
+          [disabled]="disableBtn"
+          (click)="saveSemesterData()"
+          class="btn btn-primary add-class-btn"
+        >
+          ADD SEMESTER DATA
+        </button>
+      </div>
+    </form>
+
+    <form
+      *ngIf="semester == 5"
+      [formGroup]="uiDataService.semesterFormGroup"
+      class="row g-3"
+    >
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Student Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputEmail4"
+          name="name"
+          placeholder="Student Name"
+          [value]="studentObj.name"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Roll No.</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          name="rollno"
+          placeholder="Roll No."
+          [value]="studentObj.rollNo"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Branch</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputEmail4"
+          placeholder="Branch"
+          [value]="studentObj.branch"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Father's Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputEmail4"
+          placeholder="Father's Name"
+          [value]="studentObj.father"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Mother's Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="Mother's Name"
+          [value]="studentObj.mother"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">College Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="College Name"
+          [value]="studentObj.college"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >INFORMATION THEORY & CODING</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="INFORMATION THEORY & CODING"
+          formControlName="itc"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">COMPILER DESIGN</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="COMPILER DESIGN"
+          formControlName="compiler"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">OPERATING SYSTEM</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="OPERATING SYSTEM"
+          formControlName="operating"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >COMPUTER GRAPHICS & MULTIMEDIA</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="COMPUTER GRAPHICS & MULTIMEDIA"
+          formControlName="graphics"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >ANALYSIS OF ALGORITHIMS</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="ANALYSIS OF ALGORITHIMS"
+          formControlName="algo"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >HUMAN-COMPUTER INTERACTION</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="HUMAN-COMPUTER INTERACTION"
+          formControlName="hci"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >COMPUTER GRAPHICS & MULTIMEDIA LAB</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="COMPUTER GRAPHICS & MULTIMEDIA LAB"
+          formControlName="graphicsLab"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >COMPILER DESIGN LAB</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="COMPILER DESIGN LAB"
+          formControlName="compilerLab"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >ANALYSIS OF ALGORITHIMS</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="ANALYSIS OF ALGORITHIMS"
+          formControlName="algoLab"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">ADVANCE JAVA LAB</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="ADVANCE JAVA LAB"
+          formControlName="javaLab"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >INDUSTRIAL TRAINING</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="INDUSTRIAL TRAINING"
+          formControlName="training"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">SODECA</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="SODECA"
+          formControlName="sodeca"
+        />
+      </div>
+      <div class="col-12">
+        <button
+          [disabled]="disableBtn"
+          (click)="saveSemesterData()"
+          class="btn btn-primary add-class-btn"
+        >
+          ADD SEMESTER DATA
+        </button>
+      </div>
+    </form>
+
+    <form
+      *ngIf="semester == 6"
+      [formGroup]="uiDataService.semesterFormGroup"
+      class="row g-3"
+    >
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Student Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputEmail4"
+          name="name"
+          placeholder="Student Name"
+          [value]="studentObj.name"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Roll No.</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          name="rollno"
+          placeholder="Roll No."
+          [value]="studentObj.rollNo"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Branch</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputEmail4"
+          placeholder="Branch"
+          [value]="studentObj.branch"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Father's Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputEmail4"
+          placeholder="Father's Name"
+          [value]="studentObj.father"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Mother's Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="Mother's Name"
+          [value]="studentObj.mother"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">College Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="College Name"
+          [value]="studentObj.college"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >DIGITAL IMAGE PROCESSING</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="DIGITAL IMAGE PROCESSING"
+          formControlName="image"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">MACHINE LEARNING</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="MACHINE LEARNING"
+          formControlName="machine"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >INFORMATION SECURITY SYSTEM</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="INFORMATION SECURITY SYSTEM"
+          formControlName="security"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >COMPUTER ARCHITECTURE AND ORGANIZATION
+        </label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="COMPUTER ARCHITECTURE AND ORGANIZATION"
+          formControlName="cao"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >ARTIFICIAL INTELLIGENCE</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="ARTIFICIAL INTELLIGENCE"
+          formControlName="ai"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">CLOUD COMPUTING</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="CLOUD COMPUTING"
+          formControlName="cloud"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >DISTRIBUTED SYSTEM</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="DISTRIBUTED SYSTEM"
+          formControlName="distributed"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >COMPUTER PROGRAMMING LAB</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="COMPUTER PROGRAMMING LAB"
+          formControlName="cpLab"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >DIGITAL IMAGE PROCESSING LAB</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="DIGITAL IMAGE PROCESSING LAB"
+          formControlName="imageLab"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >MACHINE LEARNING LAB</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="MACHINE LEARNING LAB"
+          formControlName="machineLab"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">PYTHON LAB</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="PYTHON LAB"
+          formControlName="pythonLab"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >MOBILE APPLICATION DEVELOPMENT LAB</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="MOBILE APPLICATION DEVELOPMENT LAB"
+          formControlName="aapLab"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">SODECA</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="SODECA"
+          formControlName="sodeca"
+        />
+      </div>
+      <div class="col-12">
+        <button
+          [disabled]="disableBtn"
+          (click)="saveSemesterData()"
+          class="btn btn-primary add-class-btn"
+        >
+          ADD SEMESTER DATA
+        </button>
+      </div>
+    </form>
+
+    <form
+      *ngIf="semester == 7"
+      [formGroup]="uiDataService.semesterFormGroup"
+      class="row g-3"
+    >
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Student Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputEmail4"
+          name="name"
+          placeholder="Student Name"
+          [value]="studentObj.name"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Roll No.</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          name="rollno"
+          placeholder="Roll No."
+          [value]="studentObj.rollNo"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Branch</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputEmail4"
+          placeholder="Branch"
+          [value]="studentObj.branch"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Father's Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputEmail4"
+          placeholder="Father's Name"
+          [value]="studentObj.father"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Mother's Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="Mother's Name"
+          [value]="studentObj.mother"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">College Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="College Name"
+          [value]="studentObj.college"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >INTERNET OF THINGS</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="INTERNET OF THINGS"
+          formControlName="iot"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >ENVIRONMENTAL ENGINEERING & DISASTER MANAGEMENT</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="ENVIRONMENTAL ENGINEERING & DISASTER MANAGEMENT"
+          formControlName="eedm"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >INTERNET OF THINGS LAB</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="INTERNET OF THINGS LAB"
+          formControlName="iotLab"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">CYBER SECURITY LAB</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="LAB"
+          formControlName="aLab"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">SODECA</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="SODECA"
+          formControlName="sodeca"
+        />
+      </div>
+      <div class="col-12">
+        <button
+          [disabled]="disableBtn"
+          (click)="saveSemesterData()"
+          class="btn btn-primary add-class-btn"
+        >
+          ADD SEMESTER DATA
+        </button>
+      </div>
+    </form>
+
+    <form
+      *ngIf="semester == 8"
+      [formGroup]="uiDataService.semesterFormGroup"
+      class="row g-3"
+    >
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Student Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputEmail4"
+          name="name"
+          placeholder="Student Name"
+          [value]="studentObj.name"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Roll No.</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          name="rollno"
+          placeholder="Roll No."
+          [value]="studentObj.rollNo"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Branch</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputEmail4"
+          placeholder="Branch"
+          [value]="studentObj.branch"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Father's Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputEmail4"
+          placeholder="Father's Name"
+          [value]="studentObj.father"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Mother's Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="Mother's Name"
+          [value]="studentObj.mother"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">College Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="College Name"
+          [value]="studentObj.college"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >BIG DATA ANALYTICS</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="BIG DATA ANALYTICS"
+          formControlName="bda"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >DISASTER MANAGEMENT</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="DISASTER MANAGEMENT"
+          formControlName="dm"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">STV LAB</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="STV LAB"
+          formControlName="stvLab"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >BIG DATA ANALYTICS LAB</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="BIG DATA ANALYTICS LAB"
+          formControlName="bdaLab"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label"
+          >SODECA</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="SODECA"
+          formControlName="training"
+        />
+      </div>
+      <div class="col-12">
+        <button
+          [disabled]="disableBtn"
+          (click)="saveSemesterData()"
+          class="btn btn-primary add-class-btn"
+        >
+          ADD SEMESTER DATA
+        </button>
+      </div>
+    </form>
+  </div>
+  <hr />
+</div>
+
+<div *ngIf="semester == 1" class="admin-classes">
+  <div class="student-container">
+    <div class="row students-data" *ngFor="let student of studentArray">
+      <div class="col-2">
+        <img class="logo" src="assets/logo.jpeg" alt="" />
+      </div>
+      <div class="col-10 student-report-header">
+        <h2>Bikaner Technical University, Bikaner</h2>
+        <h3>B.Tech Examination on June-2022</h3>
+      </div>
+      <div class="col-md-6">
+        <label for="">Student Name :</label>
+        <p>{{ student.name }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">Roll No. :</label>
+        <p>{{ student.rollno }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">Branch :</label>
+        <p>{{ student.batch }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">Email :</label>
+        <p>{{ student.email }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">Father's Name :</label>
+        <p>{{ student.father }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">Mother's Name :</label>
+        <p>{{ student.mother }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">Admission Year :</label>
+        <p>{{ student.admission }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">College Name :</label>
+        <p>{{ student.college }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">Course Title</label>
+      </div>
+      <div class="col-md-3">
+        <label for="">Credits</label>
+      </div>
+      <div class="col-md-3">
+        <label for="">Grade</label>
+      </div>
+      <div class="col-md-6">
+        <p>ENGINEERING MATHEMATICS-1</p>
+        <p>ENGINEERING CHEMISTRY</p>
+        <p>HUMAN VALUES</p>
+        <p>PROGRAMMING FOR PROBLEM SOLVING</p>
+        <p>BASIC CIVIL ENGINEERING</p>
+        <p>ENGINEERING CHEMISTRY LAB</p>
+        <p>HUMAN VALUES ACTIVITIES</p>
+        <p>COMPUTER PROGRAMMING LAB</p>
+        <p>BASIC CIVIL ENGINEERING LAB</p>
+        <p>COMPUTER AIDED MACHINE DRAWING</p>
+        <p>SODECA</p>
+      </div>
+      <div class="col-md-3">
+        <p>4</p>
+        <p>4</p>
+        <p>2</p>
+        <p>2</p>
+        <p>2</p>
+        <p>1</p>
+        <p>1</p>
+        <p>1.5</p>
+        <p>1</p>
+        <p>1.5</p>
+        <p>0.5</p>
+      </div>
+      <div class="col-md-3">
+        <p>{{ firstSemGrade.mathemetics }}</p>
+        <p>{{ firstSemGrade.chemistry }}</p>
+        <p>{{ firstSemGrade.humanValues }}</p>
+        <p>{{ firstSemGrade.programming }}</p>
+        <p>{{ firstSemGrade.civil }}</p>
+        <p>{{ firstSemGrade.chemistryLab }}</p>
+        <p>{{ firstSemGrade.humanValueActivities }}</p>
+        <p>{{ firstSemGrade.cpLab }}</p>
+        <p>{{ firstSemGrade.civilLab }}</p>
+        <p>{{ firstSemGrade.camd }}</p>
+        <p>{{ firstSemGrade.sodeca }}</p>
+      </div>
+      <div class="col-md-4"><label for="">Semester</label></div>
+      <div class="col-md-1"><p>1</p></div>
+      <div class="col-md-1"><p>2</p></div>
+      <div class="col-md-1"><p>3</p></div>
+      <div class="col-md-1"><p>4</p></div>
+      <div class="col-md-1"><p>5</p></div>
+      <div class="col-md-1"><p>6</p></div>
+      <div class="col-md-1"><p>7</p></div>
+      <div class="col-md-1"><p>8</p></div>
+
+      <div class="col-md-4"><label for="">SGPA</label></div>
+      <div class="col-md-1">
+        <p *ngIf="sgpaObj.firstSem !== 0">{{ sgpaObj.firstSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="sgpaObj.secondSem !== 0">{{ sgpaObj.secondSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="sgpaObj.thirdSem !== 0">{{ sgpaObj.thirdSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="sgpaObj.fourthSem !== 0">{{ sgpaObj.fourthSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="sgpaObj.fifthSem !== 0">{{ sgpaObj.fifthSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="sgpaObj.sixthSem !== 0">{{ sgpaObj.sixthSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="sgpaObj.seventhSem !== 0">{{ sgpaObj.seventhSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="sgpaObj.eigthSem !== 0">{{ sgpaObj.eigthSem }}</p>
+      </div>
+
+      <div class="col-md-4"><label for="">CGPA</label></div>
+      <div class="col-md-1">
+        <p *ngIf="cgpaObj.firstSem !== 0">{{ cgpaObj.firstSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="cgpaObj.secondSem !== 0">{{ cgpaObj.secondSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="cgpaObj.thirdSem !== 0">{{ cgpaObj.thirdSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="cgpaObj.fourthSem !== 0">{{ cgpaObj.fourthSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="cgpaObj.fifthSem !== 0">{{ cgpaObj.fifthSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="cgpaObj.sixthSem !== 0">{{ cgpaObj.sixthSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="cgpaObj.seventhSem !== 0">{{ cgpaObj.seventhSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="cgpaObj.eigthSem !== 0">{{ cgpaObj.eigthSem }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="semester == 2" class="admin-classes">
+  <div class="student-container">
+    <div class="row students-data" *ngFor="let student of studentArray">
+      <div class="col-2">
+        <img class="logo" src="assets/logo.jpeg" alt="" />
+      </div>
+      <div class="col-10 student-report-header">
+        <h2>Bikaner Technical University, Bikaner</h2>
+        <h3>B.Tech Examination on June-2022</h3>
+      </div>
+      <div class="col-md-6">
+        <label for="">Student Name :</label>
+        <p>{{ student.name }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">Roll No. :</label>
+        <p>{{ student.rollno }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">Branch :</label>
+        <p>{{ student.batch }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">Email :</label>
+        <p>{{ student.email }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">Father's Name :</label>
+        <p>{{ student.father }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">Mother's Name :</label>
+        <p>{{ student.mother }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">Admission Year :</label>
+        <p>{{ student.admission }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">College Name :</label>
+        <p>{{ student.college }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">Course Title</label>
+      </div>
+      <div class="col-md-3">
+        <label for="">Credits</label>
+      </div>
+      <div class="col-md-3">
+        <label for="">Grade</label>
+      </div>
+      <div class="col-md-6">
+        <p>ENGINEERING MATHEMATICS-2</p>
+        <p>ENGINEERING PHYSICS</p>
+        <p>COMMUNICATION SKILLS</p>
+        <p>BASIC MECHANICAL ENGINEERING</p>
+        <p>BASIC ELECTRICAL ENGINEERING</p>
+        <p>ENGINEERING PHYSICS LAB</p>
+        <p>LANGUAGE LAB</p>
+        <p>MANUFACTURING PRACTICE WORKSHOP</p>
+        <p>BASIC ELECTRICAL ENGINEERING LAB</p>
+        <p>COMPUTER AIDED ENGINEERING GRAPHICS</p>
+        <p>SODECA</p>
+      </div>
+      <div class="col-md-3">
+        <p>4</p>
+        <p>4</p>
+        <p>2</p>
+        <p>2</p>
+        <p>2</p>
+        <p>1</p>
+        <p>1</p>
+        <p>1.5</p>
+        <p>1</p>
+        <p>1.5</p>
+        <p>0.5</p>
+      </div>
+      <div class="col-md-3">
+        <p>{{ secondSemGrade.mathemetics }}</p>
+        <p>{{ secondSemGrade.physics }}</p>
+        <p>{{ secondSemGrade.communication }}</p>
+        <p>{{ secondSemGrade.mechanical }}</p>
+        <p>{{ secondSemGrade.electrical }}</p>
+        <p>{{ secondSemGrade.physicsLab }}</p>
+        <p>{{ secondSemGrade.languageLab }}</p>
+        <p>{{ secondSemGrade.manufacturing }}</p>
+        <p>{{ secondSemGrade.electricalLab }}</p>
+        <p>{{ secondSemGrade.caeg }}</p>
+        <p>{{ secondSemGrade.sodeca }}</p>
+      </div>
+      <div class="col-md-4"><label for="">Semester</label></div>
+      <div class="col-md-1"><p>1</p></div>
+      <div class="col-md-1"><p>2</p></div>
+      <div class="col-md-1"><p>3</p></div>
+      <div class="col-md-1"><p>4</p></div>
+      <div class="col-md-1"><p>5</p></div>
+      <div class="col-md-1"><p>6</p></div>
+      <div class="col-md-1"><p>7</p></div>
+      <div class="col-md-1"><p>8</p></div>
+
+      <div class="col-md-4"><label for="">SGPA</label></div>
+      <div class="col-md-1">
+        <p *ngIf="sgpaObj.firstSem !== 0">{{ sgpaObj.firstSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="sgpaObj.secondSem !== 0">{{ sgpaObj.secondSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="sgpaObj.thirdSem !== 0">{{ sgpaObj.thirdSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="sgpaObj.fourthSem !== 0">{{ sgpaObj.fourthSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="sgpaObj.fifthSem !== 0">{{ sgpaObj.fifthSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="sgpaObj.sixthSem !== 0">{{ sgpaObj.sixthSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="sgpaObj.seventhSem !== 0">{{ sgpaObj.seventhSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="sgpaObj.eigthSem !== 0">{{ sgpaObj.eigthSem }}</p>
+      </div>
+
+      <div class="col-md-4"><label for="">CGPA</label></div>
+      <div class="col-md-1">
+        <p *ngIf="cgpaObj.firstSem !== 0">{{ cgpaObj.firstSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="cgpaObj.secondSem !== 0">{{ cgpaObj.secondSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="cgpaObj.thirdSem !== 0">{{ cgpaObj.thirdSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="cgpaObj.fourthSem !== 0">{{ cgpaObj.fourthSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="cgpaObj.fifthSem !== 0">{{ cgpaObj.fifthSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="cgpaObj.sixthSem !== 0">{{ cgpaObj.sixthSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="cgpaObj.seventhSem !== 0">{{ cgpaObj.seventhSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="cgpaObj.eigthSem !== 0">{{ cgpaObj.eigthSem }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="semester == 3" class="admin-classes">
+  <div class="student-container">
+    <div class="row students-data" *ngFor="let student of studentArray">
+      <div class="col-2">
+        <img class="logo" src="assets/logo.jpeg" alt="" />
+      </div>
+      <div class="col-10 student-report-header">
+        <h2>Bikaner Technical University, Bikaner</h2>
+        <h3>B.Tech Examination on June-2022</h3>
+      </div>
+      <div class="col-md-6">
+        <label for="">Student Name :</label>
+        <p>{{ student.name }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">Roll No. :</label>
+        <p>{{ student.rollno }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">Branch :</label>
+        <p>{{ student.batch }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">Email :</label>
+        <p>{{ student.email }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">Father's Name :</label>
+        <p>{{ student.father }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">Mother's Name :</label>
+        <p>{{ student.mother }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">Admission Year :</label>
+        <p>{{ student.admission }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">College Name :</label>
+        <p>{{ student.college }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">Course Title</label>
+      </div>
+      <div class="col-md-3">
+        <label for="">Credits</label>
+      </div>
+      <div class="col-md-3">
+        <label for="">Grade</label>
+      </div>
+      <div class="col-md-6">
+        <p>ADVANCED ENGINEERING MATHEMATICS</p>
+        <p>MANAGERIAL ECONOMICS AND FINANCIAL ACCOUNTING</p>
+        <p>DIGITAL ELECTRONICS</p>
+        <p>DATA STRUCTURE AND ALGORITHIMS</p>
+        <p>OBJECT ORIENTED PROGRAMMING</p>
+        <p>SOFTWARE ENGINEERING</p>
+        <p>DATA STRUCTURE AND ALGORITHIMS LAB</p>
+        <p>OBJECT ORIENTED PROGRAMMING LAB</p>
+        <p>SOFTWARE ENGINEERING LAB</p>
+        <p>DIGITAL ELECTRONICS LAB</p>
+        <p>INDUSTRIAL TRAINING</p>
+      </div>
+      <div class="col-md-3">
+        <p>3</p>
+        <p>2</p>
+        <p>3</p>
+        <p>3</p>
+        <p>3</p>
+        <p>3</p>
+        <p>1.5</p>
+        <p>1.5</p>
+        <p>1.5</p>
+        <p>1.5</p>
+        <p>1</p>
+      </div>
+      <div class="col-md-3">
+        <p>{{ thirdSemGrade.mathemetics }}</p>
+        <p>{{ thirdSemGrade.economics }}</p>
+        <p>{{ thirdSemGrade.electronics }}</p>
+        <p>{{ thirdSemGrade.dsa }}</p>
+        <p>{{ thirdSemGrade.oop }}</p>
+        <p>{{ thirdSemGrade.software }}</p>
+        <p>{{ thirdSemGrade.dsaLab }}</p>
+        <p>{{ thirdSemGrade.oopLab }}</p>
+        <p>{{ thirdSemGrade.softwareLab }}</p>
+        <p>{{ thirdSemGrade.electronicsLab }}</p>
+        <p>{{ thirdSemGrade.training }}</p>
+      </div>
+      <div class="col-md-4"><label for="">Semester</label></div>
+      <div class="col-md-1"><p>1</p></div>
+      <div class="col-md-1"><p>2</p></div>
+      <div class="col-md-1"><p>3</p></div>
+      <div class="col-md-1"><p>4</p></div>
+      <div class="col-md-1"><p>5</p></div>
+      <div class="col-md-1"><p>6</p></div>
+      <div class="col-md-1"><p>7</p></div>
+      <div class="col-md-1"><p>8</p></div>
+
+      <div class="col-md-4"><label for="">SGPA</label></div>
+      <div class="col-md-1">
+        <p *ngIf="sgpaObj.firstSem !== 0">{{ sgpaObj.firstSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="sgpaObj.secondSem !== 0">{{ sgpaObj.secondSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="sgpaObj.thirdSem !== 0">{{ sgpaObj.thirdSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="sgpaObj.fourthSem !== 0">{{ sgpaObj.fourthSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="sgpaObj.fifthSem !== 0">{{ sgpaObj.fifthSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="sgpaObj.sixthSem !== 0">{{ sgpaObj.sixthSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="sgpaObj.seventhSem !== 0">{{ sgpaObj.seventhSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="sgpaObj.eigthSem !== 0">{{ sgpaObj.eigthSem }}</p>
+      </div>
+
+      <div class="col-md-4"><label for="">CGPA</label></div>
+      <div class="col-md-1">
+        <p *ngIf="cgpaObj.firstSem !== 0">{{ cgpaObj.firstSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="cgpaObj.secondSem !== 0">{{ cgpaObj.secondSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="cgpaObj.thirdSem !== 0">{{ cgpaObj.thirdSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="cgpaObj.fourthSem !== 0">{{ cgpaObj.fourthSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="cgpaObj.fifthSem !== 0">{{ cgpaObj.fifthSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="cgpaObj.sixthSem !== 0">{{ cgpaObj.sixthSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="cgpaObj.seventhSem !== 0">{{ cgpaObj.seventhSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="cgpaObj.eigthSem !== 0">{{ cgpaObj.eigthSem }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="semester == 4" class="admin-classes">
+  <div class="student-container">
+    <div class="row students-data" *ngFor="let student of studentArray">
+      <div class="col-2">
+        <img class="logo" src="assets/logo.jpeg" alt="" />
+      </div>
+      <div class="col-10 student-report-header">
+        <h2>Bikaner Technical University, Bikaner</h2>
+        <h3>B.Tech Examination on June-2022</h3>
+      </div>
+      <div class="col-md-6">
+        <label for="">Student Name :</label>
+        <p>{{ student.name }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">Roll No. :</label>
+        <p>{{ student.rollno }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">Branch :</label>
+        <p>{{ student.batch }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">Email :</label>
+        <p>{{ student.email }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">Father's Name :</label>
+        <p>{{ student.father }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">Mother's Name :</label>
+        <p>{{ student.mother }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">Admission Year :</label>
+        <p>{{ student.admission }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">College Name :</label>
+        <p>{{ student.college }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">Course Title</label>
+      </div>
+      <div class="col-md-3">
+        <label for="">Credits</label>
+      </div>
+      <div class="col-md-3">
+        <label for="">Grade</label>
+      </div>
+      <div class="col-md-6">
+        <p>DISCRETE MATHEMATICS STRUCTURE</p>
+        <p>TECHNICAL COMMUNICATION</p>
+        <p>MICROPROCESSOR AND INTERFACES</p>
+        <p>DATABASE MANAGEMENT SYSTEM</p>
+        <p>THEORY OF COMPUTATION</p>
+        <p>DATA COMMUNICATION AND COMPUTER NETWORKS</p>
+        <p>MICROPROCESSOR AND INTERFACES LAB</p>
+        <p>DATABASE MANAGEMENT SYSTEM LAB</p>
+        <p>NETWORK PROGRAMMING LAB</p>
+        <p>LINUX SHELL PROGRAMMING LAB</p>
+        <p>JAVA LAB</p>
+      </div>
+      <div class="col-md-3">
+        <p>3</p>
+        <p>2</p>
+        <p>3</p>
+        <p>3</p>
+        <p>3</p>
+        <p>3</p>
+        <p>1</p>
+        <p>1.5</p>
+        <p>1.5</p>
+        <p>1</p>
+        <p>1</p>
+      </div>
+      <div class="col-md-3">
+        <p>{{ fourthSemGrade.mathemetics }}</p>
+        <p>{{ fourthSemGrade.communication }}</p>
+        <p>{{ fourthSemGrade.microprocessor }}</p>
+        <p>{{ fourthSemGrade.dbms }}</p>
+        <p>{{ fourthSemGrade.toc }}</p>
+        <p>{{ fourthSemGrade.networks }}</p>
+        <p>{{ fourthSemGrade.mpLab }}</p>
+        <p>{{ fourthSemGrade.dbmsLab }}</p>
+        <p>{{ fourthSemGrade.npLab }}</p>
+        <p>{{ fourthSemGrade.linux }}</p>
+        <p>{{ fourthSemGrade.javaLab }}</p>
+      </div>
+      <div class="col-md-4"><label for="">Semester</label></div>
+      <div class="col-md-1"><p>1</p></div>
+      <div class="col-md-1"><p>2</p></div>
+      <div class="col-md-1"><p>3</p></div>
+      <div class="col-md-1"><p>4</p></div>
+      <div class="col-md-1"><p>5</p></div>
+      <div class="col-md-1"><p>6</p></div>
+      <div class="col-md-1"><p>7</p></div>
+      <div class="col-md-1"><p>8</p></div>
+
+      <div class="col-md-4"><label for="">SGPA</label></div>
+      <div class="col-md-1">
+        <p *ngIf="sgpaObj.firstSem !== 0">{{ sgpaObj.firstSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="sgpaObj.secondSem !== 0">{{ sgpaObj.secondSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="sgpaObj.thirdSem !== 0">{{ sgpaObj.thirdSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="sgpaObj.fourthSem !== 0">{{ sgpaObj.fourthSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="sgpaObj.fifthSem !== 0">{{ sgpaObj.fifthSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="sgpaObj.sixthSem !== 0">{{ sgpaObj.sixthSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="sgpaObj.seventhSem !== 0">{{ sgpaObj.seventhSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="sgpaObj.eigthSem !== 0">{{ sgpaObj.eigthSem }}</p>
+      </div>
+
+      <div class="col-md-4"><label for="">CGPA</label></div>
+      <div class="col-md-1">
+        <p *ngIf="cgpaObj.firstSem !== 0">{{ cgpaObj.firstSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="cgpaObj.secondSem !== 0">{{ cgpaObj.secondSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="cgpaObj.thirdSem !== 0">{{ cgpaObj.thirdSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="cgpaObj.fourthSem !== 0">{{ cgpaObj.fourthSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="cgpaObj.fifthSem !== 0">{{ cgpaObj.fifthSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="cgpaObj.sixthSem !== 0">{{ cgpaObj.sixthSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="cgpaObj.seventhSem !== 0">{{ cgpaObj.seventhSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="cgpaObj.eigthSem !== 0">{{ cgpaObj.eigthSem }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="semester == 5" class="admin-classes">
+  <div class="student-container">
+    <div class="row students-data" *ngFor="let student of studentArray">
+      <div class="col-2">
+        <img class="logo" src="assets/logo.jpeg" alt="" />
+      </div>
+      <div class="col-10 student-report-header">
+        <h2>Bikaner Technical University, Bikaner</h2>
+        <h3>B.Tech Examination on June-2022</h3>
+      </div>
+      <div class="col-md-6">
+        <label for="">Student Name :</label>
+        <p>{{ student.name }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">Roll No. :</label>
+        <p>{{ student.rollno }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">Branch :</label>
+        <p>{{ student.batch }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">Email :</label>
+        <p>{{ student.email }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">Father's Name :</label>
+        <p>{{ student.father }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">Mother's Name :</label>
+        <p>{{ student.mother }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">Admission Year :</label>
+        <p>{{ student.admission }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">College Name :</label>
+        <p>{{ student.college }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">Course Title</label>
+      </div>
+      <div class="col-md-3">
+        <label for="">Credits</label>
+      </div>
+      <div class="col-md-3">
+        <label for="">Grade</label>
+      </div>
+      <div class="col-md-6">
+        <p>INFORMATION THEORY AND CODING</p>
+        <p>COMPILER DESIGN</p>
+        <p>OPERATING SYSTEM</p>
+        <p>COMPUTER GRAPHICS & MULTIMEDIA</p>
+        <p>ANALYSIS OF ALGORITHIMS</p>
+        <p>HUMAN-COMPUTER INTERACTION</p>
+        <p>COMPUTER GRAPHICS & MULTIMEDIA LAB</p>
+        <p>COMPILER DESIGN LAB</p>
+        <p>ANALYSIS OF ALGORITHIMS LAB</p>
+        <p>ADVANCE JAVA LAB</p>
+        <p>INDUSTRIAL TRAINING</p>
+      </div>
+      <div class="col-md-3">
+        <p>2</p>
+        <p>3</p>
+        <p>3</p>
+        <p>3</p>
+        <p>3</p>
+        <p>2</p>
+        <p>1</p>
+        <p>1</p>
+        <p>1</p>
+        <p>1</p>
+        <p>2.5</p>
+      </div>
+      <div class="col-md-3">
+        <p>{{ fifthSemGrade.itc }}</p>
+        <p>{{ fifthSemGrade.compiler }}</p>
+        <p>{{ fifthSemGrade.operating }}</p>
+        <p>{{ fifthSemGrade.graphics }}</p>
+        <p>{{ fifthSemGrade.algo }}</p>
+        <p>{{ fifthSemGrade.hci }}</p>
+        <p>{{ fifthSemGrade.graphicsLab }}</p>
+        <p>{{ fifthSemGrade.compilerLab }}</p>
+        <p>{{ fifthSemGrade.algoLab }}</p>
+        <p>{{ fifthSemGrade.javaLab }}</p>
+        <p>{{ fifthSemGrade.training }}</p>
+      </div>
+      <div class="col-md-4"><label for="">Semester</label></div>
+      <div class="col-md-1"><p>1</p></div>
+      <div class="col-md-1"><p>2</p></div>
+      <div class="col-md-1"><p>3</p></div>
+      <div class="col-md-1"><p>4</p></div>
+      <div class="col-md-1"><p>5</p></div>
+      <div class="col-md-1"><p>6</p></div>
+      <div class="col-md-1"><p>7</p></div>
+      <div class="col-md-1"><p>8</p></div>
+
+      <div class="col-md-4"><label for="">SGPA</label></div>
+      <div class="col-md-1">
+        <p *ngIf="sgpaObj.firstSem !== 0">{{ sgpaObj.firstSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="sgpaObj.secondSem !== 0">{{ sgpaObj.secondSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="sgpaObj.thirdSem !== 0">{{ sgpaObj.thirdSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="sgpaObj.fourthSem !== 0">{{ sgpaObj.fourthSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="sgpaObj.fifthSem !== 0">{{ sgpaObj.fifthSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="sgpaObj.sixthSem !== 0">{{ sgpaObj.sixthSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="sgpaObj.seventhSem !== 0">{{ sgpaObj.seventhSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="sgpaObj.eigthSem !== 0">{{ sgpaObj.eigthSem }}</p>
+      </div>
+
+      <div class="col-md-4"><label for="">CGPA</label></div>
+      <div class="col-md-1">
+        <p *ngIf="cgpaObj.firstSem !== 0">{{ cgpaObj.firstSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="cgpaObj.secondSem !== 0">{{ cgpaObj.secondSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="cgpaObj.thirdSem !== 0">{{ cgpaObj.thirdSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="cgpaObj.fourthSem !== 0">{{ cgpaObj.fourthSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="cgpaObj.fifthSem !== 0">{{ cgpaObj.fifthSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="cgpaObj.sixthSem !== 0">{{ cgpaObj.sixthSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="cgpaObj.seventhSem !== 0">{{ cgpaObj.seventhSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="cgpaObj.eigthSem !== 0">{{ cgpaObj.eigthSem }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="semester == 6" class="admin-classes">
+  <div class="student-container">
+    <div class="row students-data" *ngFor="let student of studentArray">
+      <div class="col-2">
+        <img class="logo" src="assets/logo.jpeg" alt="" />
+      </div>
+      <div class="col-10 student-report-header">
+        <h2>Bikaner Technical University, Bikaner</h2>
+        <h3>B.Tech Examination on June-2022</h3>
+      </div>
+      <div class="col-md-6">
+        <label for="">Student Name :</label>
+        <p>{{ student.name }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">Roll No. :</label>
+        <p>{{ student.rollno }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">Branch :</label>
+        <p>{{ student.batch }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">Email :</label>
+        <p>{{ student.email }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">Father's Name :</label>
+        <p>{{ student.father }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">Mother's Name :</label>
+        <p>{{ student.mother }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">Admission Year :</label>
+        <p>{{ student.admission }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">College Name :</label>
+        <p>{{ student.college }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">Course Title</label>
+      </div>
+      <div class="col-md-3">
+        <label for="">Credits</label>
+      </div>
+      <div class="col-md-3">
+        <label for="">Grade</label>
+      </div>
+      <div class="col-md-6">
+        <p>DIGITAL IMAGE PROCESSING</p>
+        <p>MACHINE LEARNING</p>
+        <p>INFORMATION SECURITY SYSTSM</p>
+        <p>COMPUTER ARCHITECTURE AND ORGANIZATION</p>
+        <p>ARTIFICIAL INTELLIGENCE</p>
+        <p>CLOUD COMPUTING</p>
+        <p>DISTRIBUTED SYSTEM</p>
+        <p>DIGITAL IMAGE PROCESSING LAB</p>
+        <p>MACHINE LEARNING LAB</p>
+        <p>PYTHON LAB</p>
+        <p>MOBILE APPLICATION DEVELOPMENT LAB</p>
+      </div>
+      <div class="col-md-3">
+        <p>2</p>
+        <p>3</p>
+        <p>2</p>
+        <p>3</p>
+        <p>2</p>
+        <p>3</p>
+        <p>2</p>
+        <p>1.5</p>
+        <p>1.5</p>
+        <p>1.5</p>
+        <p>1.5</p>
+      </div>
+      <div class="col-md-3">
+        <p>{{ sixthSemGrade.image }}</p>
+        <p>{{ sixthSemGrade.machine }}</p>
+        <p>{{ sixthSemGrade.security }}</p>
+        <p>{{ sixthSemGrade.cao }}</p>
+        <p>{{ sixthSemGrade.ai }}</p>
+        <p>{{ sixthSemGrade.cloud }}</p>
+        <p>{{ sixthSemGrade.distributed }}</p>
+        <p>{{ sixthSemGrade.imageLab }}</p>
+        <p>{{ sixthSemGrade.machineLab }}</p>
+        <p>{{ sixthSemGrade.pythonLab }}</p>
+        <p>{{ sixthSemGrade.aapLab }}</p>
+      </div>
+      <div class="col-md-4"><label for="">Semester</label></div>
+      <div class="col-md-1"><p>1</p></div>
+      <div class="col-md-1"><p>2</p></div>
+      <div class="col-md-1"><p>3</p></div>
+      <div class="col-md-1"><p>4</p></div>
+      <div class="col-md-1"><p>5</p></div>
+      <div class="col-md-1"><p>6</p></div>
+      <div class="col-md-1"><p>7</p></div>
+      <div class="col-md-1"><p>8</p></div>
+
+      <div class="col-md-4"><label for="">SGPA</label></div>
+      <div class="col-md-1">
+        <p *ngIf="sgpaObj.firstSem !== 0">{{ sgpaObj.firstSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="sgpaObj.secondSem !== 0">{{ sgpaObj.secondSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="sgpaObj.thirdSem !== 0">{{ sgpaObj.thirdSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="sgpaObj.fourthSem !== 0">{{ sgpaObj.fourthSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="sgpaObj.fifthSem !== 0">{{ sgpaObj.fifthSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="sgpaObj.sixthSem !== 0">{{ sgpaObj.sixthSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="sgpaObj.seventhSem !== 0">{{ sgpaObj.seventhSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="sgpaObj.eigthSem !== 0">{{ sgpaObj.eigthSem }}</p>
+      </div>
+
+      <div class="col-md-4"><label for="">CGPA</label></div>
+      <div class="col-md-1">
+        <p *ngIf="cgpaObj.firstSem !== 0">{{ cgpaObj.firstSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="cgpaObj.secondSem !== 0">{{ cgpaObj.secondSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="cgpaObj.thirdSem !== 0">{{ cgpaObj.thirdSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="cgpaObj.fourthSem !== 0">{{ cgpaObj.fourthSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="cgpaObj.fifthSem !== 0">{{ cgpaObj.fifthSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="cgpaObj.sixthSem !== 0">{{ cgpaObj.sixthSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="cgpaObj.seventhSem !== 0">{{ cgpaObj.seventhSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="cgpaObj.eigthSem !== 0">{{ cgpaObj.eigthSem }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="semester == 7" class="admin-classes">
+  <div class="student-container">
+    <div class="row students-data" *ngFor="let student of studentArray">
+      <div class="col-2">
+        <img class="logo" src="assets/logo.jpeg" alt="" />
+      </div>
+      <div class="col-10 student-report-header">
+        <h2>Bikaner Technical University, Bikaner</h2>
+        <h3>B.Tech Examination on June-2022</h3>
+      </div>
+      <div class="col-md-6">
+        <label for="">Student Name :</label>
+        <p>{{ student.name }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">Roll No. :</label>
+        <p>{{ student.rollno }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">Branch :</label>
+        <p>{{ student.batch }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">Email :</label>
+        <p>{{ student.email }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">Father's Name :</label>
+        <p>{{ student.father }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">Mother's Name :</label>
+        <p>{{ student.mother }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">Admission Year :</label>
+        <p>{{ student.admission }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">College Name :</label>
+        <p>{{ student.college }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">Course Title</label>
+      </div>
+      <div class="col-md-3">
+        <label for="">Credits</label>
+      </div>
+      <div class="col-md-3">
+        <label for="">Grade</label>
+      </div>
+      <div class="col-md-6">
+        <p>INTERNET OF THINGS</p>
+        <p>ENVIRONMENTAL ENGINEERING & DISASTER MANAGEMENT</p>
+        <p>INTERNET OF THINGS LAB</p>
+        <p>CYBER SECURITY LAB</p>
+        <p>SODECA</p>
+      </div>
+      <div class="col-md-3">
+        <p>2</p>
+        <p>3</p>
+        <p>2</p>
+        <p>2</p>
+        <p>0.5</p>
+      </div>
+      <div class="col-md-3">
+        <p>{{ seventhSemGrade.iot }}</p>
+        <p>{{ seventhSemGrade.eedm }}</p>
+        <p>{{ seventhSemGrade.iotLab }}</p>
+        <p>{{ seventhSemGrade.aLab }}</p>
+        <p>{{ seventhSemGrade.sodeca }}</p>
+      </div>
+      <div class="col-md-4"><label for="">Semester</label></div>
+      <div class="col-md-1"><p>1</p></div>
+      <div class="col-md-1"><p>2</p></div>
+      <div class="col-md-1"><p>3</p></div>
+      <div class="col-md-1"><p>4</p></div>
+      <div class="col-md-1"><p>5</p></div>
+      <div class="col-md-1"><p>6</p></div>
+      <div class="col-md-1"><p>7</p></div>
+      <div class="col-md-1"><p>8</p></div>
+
+      <div class="col-md-4"><label for="">SGPA</label></div>
+      <div class="col-md-1">
+        <p *ngIf="sgpaObj.firstSem !== 0">{{ sgpaObj.firstSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="sgpaObj.secondSem !== 0">{{ sgpaObj.secondSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="sgpaObj.thirdSem !== 0">{{ sgpaObj.thirdSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="sgpaObj.fourthSem !== 0">{{ sgpaObj.fourthSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="sgpaObj.fifthSem !== 0">{{ sgpaObj.fifthSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="sgpaObj.sixthSem !== 0">{{ sgpaObj.sixthSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="sgpaObj.seventhSem !== 0">{{ sgpaObj.seventhSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="sgpaObj.eigthSem !== 0">{{ sgpaObj.eigthSem }}</p>
+      </div>
+
+      <div class="col-md-4"><label for="">CGPA</label></div>
+      <div class="col-md-1">
+        <p *ngIf="cgpaObj.firstSem !== 0">{{ cgpaObj.firstSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="cgpaObj.secondSem !== 0">{{ cgpaObj.secondSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="cgpaObj.thirdSem !== 0">{{ cgpaObj.thirdSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="cgpaObj.fourthSem !== 0">{{ cgpaObj.fourthSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="cgpaObj.fifthSem !== 0">{{ cgpaObj.fifthSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="cgpaObj.sixthSem !== 0">{{ cgpaObj.sixthSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="cgpaObj.seventhSem !== 0">{{ cgpaObj.seventhSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="cgpaObj.eigthSem !== 0">{{ cgpaObj.eigthSem }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="semester == 8" class="admin-classes">
+  <div class="student-container">
+    <div class="row students-data" *ngFor="let student of studentArray">
+      <div class="col-2">
+        <img class="logo" src="assets/logo.jpeg" alt="" />
+      </div>
+      <div class="col-10 student-report-header">
+        <h2>Bikaner Technical University, Bikaner</h2>
+        <h3>B.Tech Examination on June-2022</h3>
+      </div>
+      <div class="col-md-6">
+        <label for="">Student Name :</label>
+        <p>{{ student.name }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">Roll No. :</label>
+        <p>{{ student.rollno }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">Branch :</label>
+        <p>{{ student.batch }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">Email :</label>
+        <p>{{ student.email }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">Father's Name :</label>
+        <p>{{ student.father }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">Mother's Name :</label>
+        <p>{{ student.mother }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">Admission Year :</label>
+        <p>{{ student.admission }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">College Name :</label>
+        <p>{{ student.college }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">Course Title</label>
+      </div>
+      <div class="col-md-3">
+        <label for="">Credits</label>
+      </div>
+      <div class="col-md-3">
+        <label for="">Grade</label>
+      </div>
+      <div class="col-md-6">
+        <p>BIG DATA ANALYTICS</p>
+        <p>DISASTER MANAGEMENT</p>
+        <p>SOFTWARE TESTING & VALIDATION LAB</p>
+        <p>BIG DATA ANALYTICS LAB</p>
+        <p>SODECA</p>
+      </div>
+      <div class="col-md-3">
+        <p>2</p>
+        <p>3</p>
+        <p>2</p>
+        <p>2</p>
+        <p>2</p>
+      </div>
+      <div class="col-md-3">
+        <p>{{ eigthSemGrade.bda }}</p>
+        <p>{{ eigthSemGrade.dm }}</p>
+        <p>{{ eigthSemGrade.stvLab }}</p>
+        <p>{{ eigthSemGrade.bdaLab }}</p>
+        <p>{{ eigthSemGrade.training }}</p>
+      </div>
+      <div class="col-md-4"><label for="">Semester</label></div>
+      <div class="col-md-1"><p>1</p></div>
+      <div class="col-md-1"><p>2</p></div>
+      <div class="col-md-1"><p>3</p></div>
+      <div class="col-md-1"><p>4</p></div>
+      <div class="col-md-1"><p>5</p></div>
+      <div class="col-md-1"><p>6</p></div>
+      <div class="col-md-1"><p>7</p></div>
+      <div class="col-md-1"><p>8</p></div>
+
+      <div class="col-md-4"><label for="">SGPA</label></div>
+      <div class="col-md-1">
+        <p *ngIf="sgpaObj.firstSem !== 0">{{ sgpaObj.firstSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="sgpaObj.secondSem !== 0">{{ sgpaObj.secondSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="sgpaObj.thirdSem !== 0">{{ sgpaObj.thirdSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="sgpaObj.fourthSem !== 0">{{ sgpaObj.fourthSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="sgpaObj.fifthSem !== 0">{{ sgpaObj.fifthSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="sgpaObj.sixthSem !== 0">{{ sgpaObj.sixthSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="sgpaObj.seventhSem !== 0">{{ sgpaObj.seventhSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="sgpaObj.eigthSem !== 0">{{ sgpaObj.eigthSem }}</p>
+      </div>
+
+      <div class="col-md-4"><label for="">CGPA</label></div>
+      <div class="col-md-1">
+        <p *ngIf="cgpaObj.firstSem !== 0">{{ cgpaObj.firstSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="cgpaObj.secondSem !== 0">{{ cgpaObj.secondSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="cgpaObj.thirdSem !== 0">{{ cgpaObj.thirdSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="cgpaObj.fourthSem !== 0">{{ cgpaObj.fourthSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="cgpaObj.fifthSem !== 0">{{ cgpaObj.fifthSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="cgpaObj.sixthSem !== 0">{{ cgpaObj.sixthSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="cgpaObj.seventhSem !== 0">{{ cgpaObj.seventhSem }}</p>
+      </div>
+      <div class="col-md-1">
+        <p *ngIf="cgpaObj.eigthSem !== 0">{{ cgpaObj.eigthSem }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="semester == 9" class="admin-classes">
+  <div class="student-container">
+    <div class="row students-data" *ngFor="let student of studentArray">
+      <div class="col-2">
+        <img class="logo" src="assets/logo.jpeg" alt="" />
+      </div>
+      <div class="col-10 student-report-header">
+        <h2>Bikaner Technical University, Bikaner</h2>
+        <h3>B.Tech Examination on June-2022</h3>
+      </div>
+      <div class="col-md-6">
+        <label for="">Student Name :</label>
+        <p>{{ student.name }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">Roll No. :</label>
+        <p>{{ student.rollno }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">Branch :</label>
+        <p>{{ student.batch }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">Email :</label>
+        <p>{{ student.email }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">Father's Name :</label>
+        <p>{{ student.father }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">Mother's Name :</label>
+        <p>{{ student.mother }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">Admission Year :</label>
+        <p>{{ student.admission }}</p>
+      </div>
+      <div class="col-md-6">
+        <label for="">College Name :</label>
+        <p>{{ student.college }}</p>
+      </div>
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-2">
+            <label for="">EXAMINATION </label>
+          </div>
+          <div class="col-md-5">
+            <label for="">MAXIMUM MARKS</label>
+            <div class="row">
+              <div class="col-md-3">THEORY</div>
+              <div class="col-md-3">PRACTICAL</div>
+              <div class="col-md-3">DECA</div>
+              <div class="col-md-3">TOTAL</div>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <label for="">MARKS OBTAINED</label>
+            <div class="row">
+              <div class="col-md-3">THEORY</div>
+              <div class="col-md-3">PRACTICAL</div>
+              <div class="col-md-3">DECA</div>
+              <div class="col-md-3">TOTAL</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <p>B.Tech. I Sem.</p>
+      </div>
+      <div class="col-md-5">
+        <div class="row">
+          <div class="col-md-3">
+            <p>500</p>
+          </div>
+          <div class="col-md-3">
+            <p>450</p>
+          </div>
+          <div class="col-md-3">
+            <p>50</p>
+          </div>
+          <div class="col-md-3">
+            <p>1000</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <div class="row">
+          <div class="col-md-3">
+            <p>{{ finalResultObj.firstSemTheory }}</p>
+          </div>
+          <div class="col-md-3">
+            <p>{{ finalResultObj.firstSemPrac }}</p>
+          </div>
+          <div class="col-md-3">
+            <p>{{ finalResultObj.firstSemDeca }}</p>
+          </div>
+          <div class="col-md-3">
+            <p>
+              {{
+                  finalResultObj.firstSemTheory +
+                  finalResultObj.firstSemPrac +
+                  finalResultObj.firstSemDeca
+              }}
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <p>B.Tech. II Sem.</p>
+      </div>
+      <div class="col-md-5">
+        <div class="row">
+          <div class="col-md-3">
+            <p>600</p>
+          </div>
+          <div class="col-md-3">
+            <p>350</p>
+          </div>
+          <div class="col-md-3">
+            <p>50</p>
+          </div>
+          <div class="col-md-3">
+            <p>1000</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <div class="row">
+          <div class="col-md-3">
+            <p>{{ finalResultObj.secondSemTheory }}</p>
+          </div>
+          <div class="col-md-3">
+            <p>{{ finalResultObj.secondSemPrac }}</p>
+          </div>
+          <div class="col-md-3">
+            <p>{{ finalResultObj.secondSemDeca }}</p>
+          </div>
+          <div class="col-md-3">
+            <p>
+              {{
+                  finalResultObj.secondSemTheory +
+                  finalResultObj.secondSemPrac +
+                  finalResultObj.secondSemDeca
+              }}
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <p>B.Tech. III Sem.</p>
+      </div>
+      <div class="col-md-5">
+        <div class="row">
+          <div class="col-md-3">
+            <p>600</p>
+          </div>
+          <div class="col-md-3">
+            <p>350</p>
+          </div>
+          <div class="col-md-3">
+            <p>50</p>
+          </div>
+          <div class="col-md-3">
+            <p>1000</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <div class="row">
+          <div class="col-md-3">
+            <p>{{ finalResultObj.thirdSemTheory }}</p>
+          </div>
+          <div class="col-md-3">
+            <p>{{ finalResultObj.thirdSemPrac }}</p>
+          </div>
+          <div class="col-md-3">
+            <p>{{ finalResultObj.thirdSemDeca }}</p>
+          </div>
+          <div class="col-md-3">
+            <p>
+              {{
+                  finalResultObj.thirdSemTheory +
+                  finalResultObj.thirdSemPrac +
+                  finalResultObj.thirdSemDeca
+              }}
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <p>B.Tech. IV Sem.</p>
+      </div>
+      <div class="col-md-5">
+        <div class="row">
+          <div class="col-md-3">
+            <p>600</p>
+          </div>
+          <div class="col-md-3">
+            <p>350</p>
+          </div>
+          <div class="col-md-3">
+            <p>50</p>
+          </div>
+          <div class="col-md-3">
+            <p>1000</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <div class="row">
+          <div class="col-md-3">
+            <p>{{ finalResultObj.fourthSemTheory }}</p>
+          </div>
+          <div class="col-md-3">
+            <p>{{ finalResultObj.fourthSemPrac }}</p>
+          </div>
+          <div class="col-md-3">
+            <p>{{ finalResultObj.fourthSemDeca }}</p>
+          </div>
+          <div class="col-md-3">
+            <p>
+              {{
+                  finalResultObj.fourthSemTheory +
+                  finalResultObj.fourthSemPrac +
+                  finalResultObj.fourthSemDeca
+              }}
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <p>B.Tech. V Sem.</p>
+      </div>
+      <div class="col-md-5">
+        <div class="row">
+          <div class="col-md-3">
+            <p>600</p>
+          </div>
+          <div class="col-md-3">
+            <p>350</p>
+          </div>
+          <div class="col-md-3">
+            <p>50</p>
+          </div>
+          <div class="col-md-3">
+            <p>1000</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <div class="row">
+          <div class="col-md-3">
+            <p>{{ finalResultObj.fifthSemTheory }}</p>
+          </div>
+          <div class="col-md-3">
+            <p>{{ finalResultObj.fifthSemPrac }}</p>
+          </div>
+          <div class="col-md-3">
+            <p>{{ finalResultObj.fifthSemDeca }}</p>
+          </div>
+          <div class="col-md-3">
+            <p>
+              {{
+                  finalResultObj.fifthSemTheory +
+                  finalResultObj.fifthSemPrac +
+                  finalResultObj.fifthSemDeca
+              }}
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <p>B.Tech. VI Sem.</p>
+      </div>
+      <div class="col-md-5">
+        <div class="row">
+          <div class="col-md-3">
+            <p>600</p>
+          </div>
+          <div class="col-md-3">
+            <p>350</p>
+          </div>
+          <div class="col-md-3">
+            <p>50</p>
+          </div>
+          <div class="col-md-3">
+            <p>1000</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <div class="row">
+          <div class="col-md-3">
+            <p>{{ finalResultObj.sixthSemTheory }}</p>
+          </div>
+          <div class="col-md-3">
+            <p>{{ finalResultObj.sixthSemPrac }}</p>
+          </div>
+          <div class="col-md-3">
+            <p>{{ finalResultObj.sixthSemDeca }}</p>
+          </div>
+          <div class="col-md-3">
+            <p>
+              {{
+                  finalResultObj.sixthSemTheory +
+                  finalResultObj.sixthSemPrac +
+                  finalResultObj.sixthSemDeca
+              }}
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <p>B.Tech. VII Sem.</p>
+      </div>
+      <div class="col-md-5">
+        <div class="row">
+          <div class="col-md-3">
+            <p>600</p>
+          </div>
+          <div class="col-md-3">
+            <p>350</p>
+          </div>
+          <div class="col-md-3">
+            <p>50</p>
+          </div>
+          <div class="col-md-3">
+            <p>1000</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <div class="row">
+          <div class="col-md-3">
+            <p>{{ finalResultObj.seventhSemTheory }}</p>
+          </div>
+          <div class="col-md-3">
+            <p>{{ finalResultObj.seventhSemPrac }}</p>
+          </div>
+          <div class="col-md-3">
+            <p>{{ finalResultObj.seventhSemDeca }}</p>
+          </div>
+          <div class="col-md-3">
+            <p>
+              {{
+                  finalResultObj.seventhSemTheory +
+                  finalResultObj.seventhSemPrac +
+                  finalResultObj.seventhSemDeca
+              }}
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <p>B.Tech. VIII Sem.</p>
+      </div>
+      <div class="col-md-5">
+        <div class="row">
+          <div class="col-md-3">
+            <p>400</p>
+          </div>
+          <div class="col-md-3">
+            <p>550</p>
+          </div>
+          <div class="col-md-3">
+            <p>50</p>
+          </div>
+          <div class="col-md-3">
+            <p>1000</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <div class="row">
+          <div class="col-md-3">
+            <p>{{ finalResultObj.eigthSemTheory }}</p>
+          </div>
+          <div class="col-md-3">
+            <p>{{ finalResultObj.eigthSemPrac }}</p>
+          </div>
+          <div class="col-md-3">
+            <p>{{ finalResultObj.eigthSemDeca }}</p>
+          </div>
+          <div class="col-md-3">
+            <p>
+              {{
+                  finalResultObj.eigthSemTheory +
+                  finalResultObj.eigthSemPrac +
+                  finalResultObj.eigthSemDeca
+              }}
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-2">
+        <p>GRAND TOTAL</p>
+      </div>
+      <div class="col-md-5">
+        <div class="row">
+          <div class="col-md-3">
+            <p></p>
+          </div>
+          <div class="col-md-3">
+            <p></p>
+          </div>
+          <div class="col-md-3">
+            <p></p>
+          </div>
+          <div class="col-md-3">
+            <p>8000</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <div class="row">
+          <div class="col-md-3">
+            <p></p>
+          </div>
+          <div class="col-md-3">
+            <p></p>
+          </div>
+          <div class="col-md-3">
+            <p></p>
+          </div>
+          <div class="col-md-3">
+            <p>
+              {{
+              finalResultObj.firstSemTheory +
+              finalResultObj.firstSemPrac +
+              finalResultObj.firstSemDeca +
+              finalResultObj.secondSemTheory +
+              finalResultObj.secondSemPrac +
+              finalResultObj.secondSemDeca +
+              finalResultObj.thirdSemTheory +
+              finalResultObj.thirdSemPrac +
+              finalResultObj.thirdSemDeca +
+              finalResultObj.fourthSemTheory +
+              finalResultObj.fourthSemPrac +
+              finalResultObj.fourthSemDeca +
+              finalResultObj.fifthSemTheory +
+              finalResultObj.fifthSemPrac +
+              finalResultObj.fifthSemDeca +
+              finalResultObj.sixthSemTheory +
+              finalResultObj.sixthSemPrac +
+              finalResultObj.sixthSemDeca +
+              finalResultObj.seventhSemTheory +
+              finalResultObj.seventhSemPrac +
+              finalResultObj.seventhSemDeca +
+              finalResultObj.eigthSemTheory +
+              finalResultObj.eigthSemPrac +
+              finalResultObj.eigthSemDeca
+              }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

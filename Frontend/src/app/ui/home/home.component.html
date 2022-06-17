@@ -1,0 +1,21 @@
+
+    <div class="home-nav">
+      <div class="row">
+        <div class="col-4"><h4>CLASSES LIST PANEL</h4></div>
+        <div class="col-8"><a routerLink="../admin">ADMIN</a></div>
+      </div>
+    </div>
+    <hr />
+    <div class="home-body">
+      <div class="admin-classes">
+        <h5 class="mt-5">Classes List</h5>
+        <div class="classes-container">
+          <div class="row">
+            <div class="col-3"><p><a href="../student-form/1/get">CLASS-1</a></p></div>
+            <div class="col-3" *ngFor="let class of classArray">
+              <p><a routerLink="../student-form/{{class.classId}}/get">{{class.className}}</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>

@@ -1,0 +1,149 @@
+.home-nav {
+    margin-bottom: 1.5rem;
+  }
+  
+  .home-nav .row .col-4 h4 {
+    color: #05595b;
+  }
+  
+  .home-nav .row .col-8 a {
+    float: right !important;
+    text-decoration: none;
+    color: 05595B !important;
+  }
+  
+  .home-body button a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .home-body h5 {
+    color: #05595b;
+  }
+  
+  .classes-container .row .col-3 {
+    max-width: 10rem;
+    min-height: 8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #05595b;
+    color: white;
+    border-radius: 10px;
+    margin: 1rem 0.6rem;
+  }
+  
+  .classes-container .row .col p {
+    color: white;
+  }
+  
+  .classes-container a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .admin-container {
+    background-color: white;
+    margin: 3rem;
+    min-height: 85vh;
+    border-radius: 25px;
+    /* box-shadow: 10px 10px 5px #213974; */
+    padding: 2rem 4rem;
+  }
+  
+  .admin-nav {
+    margin-bottom: 1.5rem;
+  }
+  
+  .admin-nav .row .col-4 h4 {
+    color: #05595b;
+  }
+  
+  .admin-nav .row .col-8 a {
+    float: right !important;
+    text-decoration: none;
+    color: #05595b !important;
+  }
+  
+  .admin-body button a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .classes-container .row .col-3 {
+    max-width: 10rem;
+    min-height: 8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #05595b;
+    border-radius: 10px;
+    margin: 1rem 0.6rem;
+  }
+  
+  .classes-container .row .col p {
+    color: white;
+  }
+  
+  .classes-container a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .form-body {
+    margin-top: 3rem;
+    border-radius: 10px;
+    /* box-shadow: 1px 1px 6px 0px #252526; */
+    border: 1px solid #055a5b62;
+    padding: 1rem;
+  }
+  
+  .form-body input {
+    border: 1px solid #055a5b62;
+  }
+  
+  .admin-classes h5 {
+    color: #05595b;
+  }
+  
+  .add-class-btn {
+    background-color: #05595b;
+  }
+  
+  hr {
+    background-color: #05595b;
+  }
+  
+  label {
+    color: #0a393a;
+  }
+  
+  .students-data {
+    border: 1px solid #055a5b62;
+    margin: 2rem 0rem;
+  }
+  
+  .students-data div {
+    border: 1px solid #055a5b62;
+  }
+  
+  .students-data label {
+    font-weight: 500;
+  }
+  
+  .student-report-header {
+    text-align: center;
+    color: #0a393a;
+  }
+  
+  .sem-btn {
+    display: flex;
+    justify-content: center;
+    button {
+      margin: 1.5rem;
+    }
+  }
+  
+  .logo{
+    width: 150px;
+  }
